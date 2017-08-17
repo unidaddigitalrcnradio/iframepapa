@@ -8,6 +8,7 @@ import {Noticia} from '../noticias/noticias';
 @Component({
   selector: 'noticias',
   templateUrl: './noticias.component.html',
+  styleUrls: ['./noticias.component.css'],
   providers:[NoticiasService]
 })
 
@@ -66,10 +67,10 @@ this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=5
                                                         _post.logoMarca = 'LaFM';
                                                    } 
                                                 }
-                                                console.log(this.jsonFm);
+                                                //console.log(this.jsonFm);
                                                 this.arrayFM = this._notiServ.crearObjNoti(this.jsonFm);
-                                                //this.nuevaArray = new ArrayNoticias(this.arrayFM);
-                                                console.log(this.arrayFM);
+                                                
+                                                //console.log(this.arrayFM);
                                                                                          
                                         },
                                         error => {
@@ -127,7 +128,7 @@ this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=
                                                
                                                 this.arrayRCN = this._notiServ.crearObjNoti(this.jsonRcn);
                                                 this.allNoti = this._notiServ.crearListaCompleta(this.arrayFM, this.arrayRCN);
-                                                console.log(this.allNoti);
+                                                //console.log(this.allNoti);
                                         },
                                         error => {
                                             this.errorMessage = <any>error;

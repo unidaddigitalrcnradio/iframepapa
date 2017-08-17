@@ -26,7 +26,7 @@ export class NoticiasService {
     	let ArregloNoticias:Noticia[]=[];
 
     	for(let _j of _json){		
-    		console.log(_j.imgJson);
+    		//console.log(_j.imgJson);
     		let n = new Noticia(_j.id, _j.title.rendered, _j.excerpt.rendered, _j.imgJson, _j.date, _j.link, _j.logoMarca);	
     	ArregloNoticias.push(n);
     	}
