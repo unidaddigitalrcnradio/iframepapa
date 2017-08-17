@@ -13,8 +13,8 @@ import {Noticia} from '../noticias/noticias';
 })
 
 export class NoticiaComponent{
-	private jsonFm;
-    private jsonRcn;
+	public jsonFm;
+    public jsonRcn;
 	public errorMessage;
     private arrayFM: Noticia[] = [];
     private arrayRCN: Noticia[] = [];
@@ -22,9 +22,8 @@ export class NoticiaComponent{
     private _imgJason;
 
 
-	constructor(private _notiServ: NoticiasService){
+	constructor(private _notiServ: NoticiasService){  
 
-        
 
 this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=50')
                                     .subscribe(
@@ -32,28 +31,15 @@ this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=5
                                                 this.jsonFm = result;
                                                 //Recorrer el arreglo
                                                 
-                                                for(let _post of this.jsonFm){                                                  
-                                                    // this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
-                                                    // result =>{
-                                                    //     let rst2 = result ;
-
-                                                    //     _post.imgJson = rst2.source_url;
-                                                    //     _post.logoMarca = 'laFM';
-                                                    // },
-                                                    // error =>{
-                                                    //     this.errorMessage = <any>error;
-                                                    //     if(this.errorMessage !== null){
-                                                    //         console.log(this.errorMessage);
-                                                    //         alert("Error en la peticion de Imagenes");
-                                                    //     }
-                                                    // });
-                                                     if(_post._links['wp:featuredmedia']){
-                                                       this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
+                                                for(let _p of this.jsonFm){                                                  
+                                                     _p.logomarca = 'http://www.lafm.com.co/wp-content/uploads/Logo-FM_FondoBlanco.png';
+                                                     
+                                                     if(_p._links['wp:featuredmedia']){
+                                                       this._notiServ.getJson(_p._links['wp:featuredmedia']['0']['href']).subscribe(
                                                     result =>{
-                                                        this._imgJason = result ;
-
-                                                        _post.imgJson = this._imgJason.source_url;
-                                                        _post.logoMarca = 'laFM';
+                                                        let _imgJason = result ;
+                                                        var valorUrl:string = _imgJason.source_url;
+                                                        _p.imgjson = valorUrl;                                          
                                                     },
                                                     error =>{
                                                         this.errorMessage = <any>error;
@@ -63,8 +49,8 @@ this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=5
                                                         }
                                                     }); 
                                                    } else{
-                                                       _post.imgJson = 'https://www.elheraldo.co/sites/default/files/articulo/2017/06/30/papa_francisco.jpg';
-                                                        _post.logoMarca = 'LaFM';
+                                                       _p.imgjson = 'https://www.elheraldo.co/sites/default/files/articulo/2017/06/30/papa_francisco.jpg';
+                                                      
                                                    } 
                                                 }
                                                 //console.log(this.jsonFm);
@@ -89,29 +75,17 @@ this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=
                                                 this.jsonRcn = result;
                                                 //Recorrer el arreglo
                                                 
-                                                 for(let _post of this.jsonRcn){ 
-                                                //     this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
-                                                //     result =>{
-                                                //         let rst2 = result ;
-
-                                                //         _post.imgJson = rst2.source_url;
-                                                //         _post.logoMarca = 'laFM';
-                                                //     },
-                                                //     error =>{
-                                                //         this.errorMessage = <any>error;
-                                                //         if(this.errorMessage !== null){
-                                                //             console.log(this.errorMessage);
-                                                //             alert("Error en la peticion de Imagenes");
-                                                //         }
-                                                //     });
-                                                    if(_post._links['wp:featuredmedia']){
-                                                       this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
+                                                 for(let _p of this.jsonRcn){ 
+                                                     _p.logomarca = 'http://emisorasenvivo.co/sites/default/files/radio/logos/logo-rcn-radio.jpg';
+                                                    if(_p._links['wp:featuredmedia']){
+                                                       this._notiServ.getJson(_p._links['wp:featuredmedia']['0']['href']).subscribe(
                                                     result =>{
-                                                        this._imgJason = result ;
+                                                        let _imgJason = result ;
 
-                                                        _post.imgJson = this._imgJason.source_url;
-                                                        _post.logoMarca = 'RcnBasica';
-                                                    },
+                                                         var valorUrl:string = _imgJason.source_url;
+                                                         console.log(valorUrl);
+                                                        _p.imgjson = valorUrl;  
+                                                       },
                                                     error =>{
                                                         this.errorMessage = <any>error;
                                                         if(this.errorMessage !== null){
@@ -120,15 +94,14 @@ this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=
                                                         }
                                                     }); 
                                                    } else{
-                                                       _post.imgJson = 'https://www.elheraldo.co/sites/default/files/articulo/2017/06/30/papa_francisco.jpg';
-                                                        _post.logoMarca = 'RcnBasica';
+                                                       _p.imgjson = 'https://www.elheraldo.co/sites/default/files/articulo/2017/06/30/papa_francisco.jpg';
                                                    }                                                
                                                     
                                                 }
                                                
                                                 this.arrayRCN = this._notiServ.crearObjNoti(this.jsonRcn);
                                                 this.allNoti = this._notiServ.crearListaCompleta(this.arrayFM, this.arrayRCN);
-                                                //console.log(this.allNoti);
+                                                console.log(this.allNoti);
                                         },
                                         error => {
                                             this.errorMessage = <any>error;

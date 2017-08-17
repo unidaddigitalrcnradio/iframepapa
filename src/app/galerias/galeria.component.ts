@@ -41,9 +41,9 @@ export class GaleriaComponent{
                                                 //      if(_post._links['wp:featuredmedia']){
                                                 //        this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
                                                 //     result =>{
-                                                //         this._imgJason = result ;
-
-                                                //         _post.imgJson = this._imgJason.source_url;
+                                                //         let _imgJason = result ;
+                                                //         //console.log(_imgJason);
+                                                //         _post.imgJson = _imgJason.source_url;
                                                 //         _post.logoMarca = 'laFM';
                                                 //     },
                                                 //     error =>{
@@ -58,7 +58,7 @@ export class GaleriaComponent{
                                                 //         _post.logoMarca = 'LaFM';
                                                 //    } 
                                                 // }
-                                                console.log(this.galeriaJson);
+                                                //console.log(this.galeriaJson);
                                                 //this.arrayFM = this._notiServ.crearObjNoti(this.jsonFm);
                                                 //this.nuevaArray = new ArrayNoticias(this.arrayFM);
                                                 //console.log(this.arrayFM);

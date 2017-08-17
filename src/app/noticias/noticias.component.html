@@ -2,9 +2,10 @@
     <li *ngFor="let data of allNoti" >
         <h1> {{data.titulo}}</h1>
         <p>{{data.teaser}}</p>
-        <h2>{{ data.urlLogoMarca }}</h2>
+        <img src="{{data.urlLogoMarca}}" alt="">
+        
          <a href="{{ data.urlNoti }}"> link </a>
-       <img src="{{ data.urlImg }}" alt="">
+       <img src='{{ data.urlImg }}' alt="">
        <h3>{{data.dateNoti}}</h3>
         <div class="compartirRedes">
             <a href="">{{ data.urlNoti }}</a>
