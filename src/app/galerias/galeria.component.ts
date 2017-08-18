@@ -1,68 +1,30 @@
 import { Component } from '@angular/core';
  
 // Importamos la clase del servicio
-import {NoticiasService} from '../noticias/noticias.service';
-import {ArrayNoticias} from '../noticias/arraynoticia';
-import {Noticia} from '../noticias/noticias';
+import {GaleriaService} from '../galerias/galeria.service';
+import {Galeria} from '../galerias/galeria';
+import $ from 'jquery/dist/jquery';
  
 @Component({
   selector: 'galeria',
   templateUrl: './galeria.component.html',
   styleUrls: ['./galeria.component.css'],
-  providers:[NoticiasService]
+  providers:[GaleriaService]
 })
 
 export class GaleriaComponent{
 	public galeriaJson;
 	public errorMessage;
+  public objGaleria;
 
-	constructor(private _notiServ: NoticiasService){
-		this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts/364737')
+	constructor(private _galServ: GaleriaService){
+		this._galServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts/364737')
                                     .subscribe(
                                         result => {
                                                 this.galeriaJson = result;
-                                                //Recorrer el arreglo
-                                                
-                                                // for(let _post of this.galeriaJson){                                                  
-                                                //     // this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
-                                                //     // result =>{
-                                                //     //     let rst2 = result ;
+                                                this.objGaleria = this._galServ.crearObjGaleria(this.galeriaJson);
 
-                                                //     //     _post.imgJson = rst2.source_url;
-                                                //     //     _post.logoMarca = 'laFM';
-                                                //     // },
-                                                //     // error =>{
-                                                //     //     this.errorMessage = <any>error;
-                                                //     //     if(this.errorMessage !== null){
-                                                //     //         console.log(this.errorMessage);
-                                                //     //         alert("Error en la peticion de Imagenes");
-                                                //     //     }
-                                                //     // });
-                                                //      if(_post._links['wp:featuredmedia']){
-                                                //        this._notiServ.getJson(_post._links['wp:featuredmedia']['0']['href']).subscribe(
-                                                //     result =>{
-                                                //         let _imgJason = result ;
-                                                //         //console.log(_imgJason);
-                                                //         _post.imgJson = _imgJason.source_url;
-                                                //         _post.logoMarca = 'laFM';
-                                                //     },
-                                                //     error =>{
-                                                //         this.errorMessage = <any>error;
-                                                //         if(this.errorMessage !== null){
-                                                //             console.log(this.errorMessage);
-                                                //             alert("Error en la peticion de Imagenes");
-                                                //         }
-                                                //     }); 
-                                                //    } else{
-                                                //        _post.imgJson = 'https://www.elheraldo.co/sites/default/files/articulo/2017/06/30/papa_francisco.jpg';
-                                                //         _post.logoMarca = 'LaFM';
-                                                //    } 
-                                                // }
-                                                //console.log(this.galeriaJson);
-                                                //this.arrayFM = this._notiServ.crearObjNoti(this.jsonFm);
-                                                //this.nuevaArray = new ArrayNoticias(this.arrayFM);
-                                                //console.log(this.arrayFM);
-                                                                                         
+                                                console.log(this.objGaleria);         
                                         },
                                         error => {
                                             this.errorMessage = <any>error;
