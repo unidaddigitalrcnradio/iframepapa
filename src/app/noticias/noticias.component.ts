@@ -13,14 +13,14 @@ import {Noticia} from '../noticias/noticias';
 })
 
 export class NoticiaComponent{
-	public jsonFm;
-  public jsonRcn;
-	public errorMessage;
-  public arrayFM: Noticia[] = [];
-  public arrayRCN: Noticia[] = [];
-  public allNoti: Noticia[] = [];
+public jsonFm;
+public jsonRcn;
+public errorMessage;
+public arrayFM: Noticia[] = [];
+public arrayRCN: Noticia[] = [];
+public allNoti: Noticia[] = [];
 
-	constructor(private _notiServ: NoticiasService){  
+constructor(private _notiServ: NoticiasService){  
 
 
 this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=50')
