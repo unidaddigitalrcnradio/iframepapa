@@ -5,13 +5,15 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NoticiaComponent } from './noticias/noticias.component';
 import { GaleriaComponent } from './galerias/galeria.component';
+import { RelojComponent } from './reloj/reloj.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NoticiaComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    RelojComponent
     ],
   imports: [
     BrowserModule,
