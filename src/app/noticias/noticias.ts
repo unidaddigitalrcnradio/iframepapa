@@ -7,7 +7,8 @@ export class Noticia{
 		public dateNoti:Date, 
 		public urlNoti,
 		public urlLogoMarca,
-		public urlImg)
+		public urlImg,
+		public content)
 	{ }
 
 

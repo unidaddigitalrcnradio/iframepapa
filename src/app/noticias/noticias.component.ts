@@ -13,16 +13,14 @@ import {Noticia} from '../noticias/noticias';
 })
 
 export class NoticiaComponent{
-	public jsonFm;
-    public jsonRcn;
-	public errorMessage;
-    private arrayFM: Noticia[] = [];
-    private arrayRCN: Noticia[] = [];
-    public allNoti: Noticia[] = [];
-    private _imgJason;
+public jsonFm;
+public jsonRcn;
+public errorMessage;
+public arrayFM: Noticia[] = [];
+public arrayRCN: Noticia[] = [];
+public allNoti: Noticia[] = [];
 
-
-	constructor(private _notiServ: NoticiasService){  
+constructor(private _notiServ: NoticiasService){  
 
 
 this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=50')
@@ -83,7 +81,6 @@ this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=
                                                         let _imgJason = result ;
 
                                                          var valorUrl:string = _imgJason.source_url;
-                                                         console.log(valorUrl);
                                                         _p.imgjson = valorUrl;  
                                                        },
                                                     error =>{
@@ -98,10 +95,8 @@ this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=
                                                    }                                                
                                                     
                                                 }
-                                               
-                                                this.arrayRCN = this._notiServ.crearObjNoti(this.jsonRcn);
-                                                this.allNoti = this._notiServ.crearListaCompleta(this.arrayFM, this.arrayRCN);
-                                                console.log(this.allNoti);
+                                               this.arrayRCN = this._notiServ.crearObjNoti(this.jsonRcn);
+                                                   this.allNoti = this.unirArchivos(this.arrayFM , this.arrayRCN );
                                         },
                                         error => {
                                             this.errorMessage = <any>error;
@@ -113,8 +108,15 @@ this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=
                                         }
                                     );
 
+   console.log(this.allNoti);
+  }
 
-	}
+unirArchivos(_array1, _array2){
+  return this._notiServ.crearListaCompleta(_array1, _array2);
+
+}
+
+
 
 
 }

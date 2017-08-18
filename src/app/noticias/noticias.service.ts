@@ -26,19 +26,12 @@ export class NoticiasService {
     	
     	let ArregloNoticias:Noticia[]=[];
     	//let valor1 = _json.length;
-    	console.log(_json);
+    	//console.log(_json);
     	for (var i = 0; i < _json.length; i++) {
-    		console.log(_json[i].imgjson);
-    		let n = new Noticia(_json[i].id, _json[i].title.rendered, _json[i].excerpt.rendered, _json[i].date, _json[i].link, _json[i].logomarca, _json[i].imgjson);	
+    		
+    		let n = new Noticia(_json[i].id, _json[i].title.rendered, _json[i].excerpt.rendered, _json[i].date, _json[i].link, _json[i].logomarca, _json[i].imgjson, _json[i].content.rendered);	
     		ArregloNoticias.push(n);
     	}
-   //  	for(let _j of _json){
-    		
-			// console.log(_j.urlImg);
-    		
-   //  		let n = new Noticia(_j.id, _j.title.rendered, _j.excerpt.rendered, _j.date, _j.link, _j.logoMarca, _j.urlImg);	
-   //  		ArregloNoticias.push(n);
-   //  	}
 
     	return ArregloNoticias;
 	}
@@ -63,11 +56,11 @@ export class NoticiasService {
 		var k;
 
 			
-		for (var m = n; m <= 0; m--) 
+		for (var m = n; m >= 0; m--) 
 		{
 			for (var i = 0; i < n - 1; i++) {
 				k = 1 +i;
-				if(ArregloNoticias[i].dateNoti > ArregloNoticias[k].dateNoti)
+				if(ArregloNoticias[i].dateNoti < ArregloNoticias[k].dateNoti)
 				{
 					this.swapElements(i,k, ArregloNoticias);
 				}

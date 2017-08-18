@@ -1,22 +1,262 @@
 <!doctype html>
 <html lang="es">
 <head>
+  
   <meta charset="utf-8">
-  <title>Angular4</title>
+  <title>Angular 4</title>
   <base href="/">
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation.css" />
+  <!--- css --->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <!--- Foundation --->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation.css" />
+  <!--- Fonts ---->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">  
 </head>
-<body>
- <header>
-   <p>header</p> 
- </header>
-  <app-root></app-root>
+<body> 
+<header>
+<div class="row">
+<div class="h_site">
+  <div class="top-bar-left small-4 large-3 columns">
+          <img class="center" src="assets/img/log_papa.png" alt="">
+  </div>
+      <div class="top-bar-right logo_rcn small-4 large-2 columns">
+           <img class="" src="assets/img/rcn.png" alt=""> 
+     </div>
+  <div class="top-bar-right small-4 large-7 columns">
+         <ul class="menu align-center d-tablet">
+          <li><a href="#">ULTIMA HORA</a></li>
+          <li><a href="#">PERFIL</a></li>
+          <li><a href="#">AGENDA</a></li>
+          <li><a href="#">FRASES</a></li>
+          <li><a href="#">GALERIA</a></li>
+      </ul>
+  </div>
+</div> 
+</div>
+</header>
+<div class="cenefa">
+    <div class="row">
+        <div class="large-12 columns">
+           <div class="btn_ver"></div>            
+        </div>
+    </div> 
+</div>
+
+<!--- streaming - contador --->
+ <div class="bg-black">
+  <div class="row">
+     <div class="large-7 columns">
+          <iframe width="100%" height="550" src="https://www.youtube.com/embed/RtU_mdL2vBM" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="large-2 columns">
+         <div class="contador">
+    
+           <!-- script -->  
+           <!-- script/ -->  
+                           
+         </div>
+      </div>
+  </div>
+  </div>
+<!--- streaming - contador --->
   
-  
-    <p>footer</p>
+   <!--- Radio en vivo --->
+   <div class="radio">
+        <a href="#"> <span class="logo_b"><img src="assets/img/rcn_b.png" alt=""></span><p>RADIO EN VIVO</p></a>
+   </div>
+   <!--- /Radio en vivo --->
+   
+   
+    <!---- Ultima hora --->
+    <div class="news">
+        <div class="row">
+            <h1>ULTIMA HORA</h1>
+              <div class="large-4 columns">
+                <!-- <app-root></app-root> -->                
+                    <div class="news">
+                       <a href="#">
+                            <img class="imgw100" src="assets/img/prev.jpg" alt="">
+                            <div class="card">
+                                <h1 class="titleN">NOTICIA 1</h1>
+                                <div class="date">AGO 15, 9:07 AM</div>
+                                <div class="descript">
+                                    <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                                </div>
+                                <div class="logoportal">
+                                    <img src="assets/img/logor.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                                    
+              </div>
+                <div class="large-4 columns">
+                <!-- <app-root></app-root> -->                
+                    <div class="news">
+                       <a href="#">
+                            <img class="imgw100" src="assets/img/prev.jpg" alt="">
+                            <div class="card">
+                                <h1 class="titleN">NOTICIA 1</h1>
+                                <div class="date">AGO 15, 9:07 AM</div>
+                                <div class="descript">
+                                    <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                                </div>
+                                <div class="logoportal">
+                                    <img src="assets/img/logor.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                                    
+              </div>
+                <div class="large-4 columns">
+                <!-- <app-root></app-root> -->                
+                    <div class="news">
+                       <a href="#">
+                            <img class="imgw100" src="assets/img/prev.jpg" alt="">
+                            <div class="card">
+                                <h1 class="titleN">NOTICIA 1</h1>
+                                <div class="date">AGO 15, 9:07 AM</div>
+                                <div class="descript">
+                                    <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                                </div>
+                                <div class="logoportal">
+                                    <img src="assets/img/logor.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                                    
+              </div>          
+        </div> 
+        <br>
+        <div class="row">
+              <div class="large-4 columns">              
+                    <div class="news">
+                       <a href="#">
+                            <img class="imgw100" src="assets/img/prev.jpg" alt="">
+                            <div class="card">
+                                <h1 class="titleN">NOTICIA 1</h1>
+                                <div class="date">AGO 15, 9:07 AM</div>
+                                <div class="descript">
+                                    <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                                </div>
+                                <div class="logoportal">
+                                    <img src="assets/img/logor.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                                    
+              </div>
+                <div class="large-4 columns">
+                <!-- <app-root></app-root> -->                
+                    <div class="news">
+                       <a href="#">
+                            <img class="imgw100" src="assets/img/prev.jpg" alt="">
+                            <div class="card">
+                                <h1 class="titleN">NOTICIA 1</h1>
+                                <div class="date">AGO 15, 9:07 AM</div>
+                                <div class="descript">
+                                    <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                                </div>
+                                <div class="logoportal">
+                                    <img src="assets/img/logor.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                                    
+              </div>
+                <div class="large-4 columns">
+                <!-- <app-root></app-root> -->                
+                    <div class="news">
+                       <a href="#">
+                            <img class="imgw100" src="assets/img/prev.jpg" alt="">
+                            <div class="card">
+                                <h1 class="titleN">NOTICIA 1</h1>
+                                <div class="date">AGO 15, 9:07 AM</div>
+                                <div class="descript">
+                                    <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                                </div>
+                                <div class="logoportal">
+                                    <img src="assets/img/logor.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                                    
+              </div>          
+        </div> 
+        
+            
+        <br>
+        
+        <div class="vermas">
+            <a href="#">VER MAS</a>
+        </div>
+    </div>
+    <!--- /Ultima hora --->
+    
+    <!--- perfil ---> 
+    <div class="perfil">
+        <div class="row">
+            <h1>PERFIL</h1>
+            <div class="large-6 columns">
+            <img class="center" src="assets/img/pap.png" alt="">
+            </div>
+              <div class="large-6 columns">
+                <p>El primer Papa americano es el jesuita argentino Jorge Mario Bergoglio, de 76 años, arzobispo de Buenos Aires. Es una figura destacada de todo el continente y un pastor sencillo y muy querido en su diócesis, que ha visitado a lo ancho y a lo largo, incluso trasladándose en medios de transporte público, en los quince años de ministerio episcopal.</p>
+            </div>
+        </div>
+    </div>
+    <!--- /perfil --->
+    <!--- Agenda ---> 
+    <div class="agenda">
+        <div class="row">
+            <h1>AGENDA</h1>
+            <div class="large-6 columns">
+               <div class="recorridoAgenda">
+                    <p>RECORRIDO
+                    <br><span> Y AGENDA</span></p>
+               </div> 
+         
+            </div> 
+            <div class="large-6 columns">
+                
+                <div class="lookbook">
+                    <div class="lookbook__image">
+                        <img id="zoom1" src="assets/img/mapa.png" alt="">
+                        <div class="hint togmov1" style="top: 45%; left: 39%;;">
+                        <span class="plus"> 1 </span> 
+                        <span class="hint__dot"></span>
+                        <div class="tool tool--right">
+                    <div class="tip"></div>
+                    <span>Bogotá</span>
+                    <div class="hover-tool">
+                      <div class="hover-tool__tip"></div>
+                      <span class="hover-tool__text"> ROMA - BOGOTÁ</span> </div>
+                  </div>
+                    </div>
+                    </div>                   
+                   
+                </div>
+            </div> 
+            
+        </div>
+    </div>
+    
+    
+    
+    
+    <!--- /Agenda ---> 
+ 
+ 
+ 
+ 
+ 
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="src/app/reloj/js/jquery.epiclock.min.js"></script>
+
+
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.2/js/foundation.min.js"></script> -->
 </body>
 </html>
