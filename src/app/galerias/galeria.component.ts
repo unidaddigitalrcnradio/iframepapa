@@ -13,25 +13,24 @@ import $ from 'jquery/dist/jquery';
 })
 
 export class GaleriaComponent{
-	public galeriaJson;
-	public errorMessage;
-  public objGaleria;
+public galeriaJson;
+public errorMessage;
+public objGaleria;
 
-	constructor(private _galServ: GaleriaService){
-		this._galServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts/364737')
+constructor(private _galServ: GaleriaService){
+        this._galServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts/364737')
                                     .subscribe(
                                         result => {
                                                 this.galeriaJson = result;
                                                 this.objGaleria = this._galServ.crearObjGaleria(this.galeriaJson);
 
-                                                console.log(this.objGaleria);         
+                                                console.log(this.objGaleria);
                                         },
                                         error => {
                                             this.errorMessage = <any>error;
-                                             
-                                            if(this.errorMessage !== null){
+                                            if (this.errorMessage !== null){
                                                 console.log(this.errorMessage);
-                                                alert("Error en la petición");
+                                                alert('Error en la petición');
                                             }
                                         }
                                     );
