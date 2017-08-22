@@ -43,9 +43,10 @@ constructor(private _notiServ: NoticiasService){
                                                             this.jsonRcn = result;
                                                             //Recorrer el arreglo
                                                             for(let _p of this.jsonRcn){
-                                                                _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/logor.png';
+                                                                // tslint:disable-next-line:max-line-length
+                                                                _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/logor.png';
                                                                 let valor;
-                                                                if(_p._links['wp:featuredmedia']){
+                                                                if (_p._links['wp:featuredmedia']){
                                                                     valor = _p._links['wp:featuredmedia']['0']['href'];
                                                                 }else{
                                                                     valor = 'sinImagen';
@@ -53,12 +54,10 @@ constructor(private _notiServ: NoticiasService){
                                                                 _p.imgjson = valor;
                                                             }
                                                                 this.arrayRCN = this._notiServ.crearObjNoti(this.jsonRcn);
-                                                                //console.log(this.arrayRCN);
-                                                                //console.log(this.arrayFM);
+
                                                                 this.allNoti = this.unirArchivos(this.arrayFM , this.arrayRCN );
                                                                 this.finNoti = this.traerimagenes(this.allNoti);
-                                                                console.log(this.finNoti);
-                                                    },
+                                                            },
                                                     error => {
                                                         this.errorMessage = <any>error;
                                                         if(this.errorMessage !== null){
@@ -67,7 +66,6 @@ constructor(private _notiServ: NoticiasService){
                                                         }
                                                     }
                                                 );
-                                                //console.log(this.arrayFM);
                                             },
                                         error => {
                                             this.errorMessage = <any>error;
@@ -87,5 +85,4 @@ constructor(private _notiServ: NoticiasService){
     traerimagenes(_arrayFinal){
         return this._notiServ.addImagenJson(_arrayFinal);
     }
-
 }

@@ -24,7 +24,7 @@ export class NoticiasService {
 		let ArregloNoticias:Noticia[] = [];
 
     	for (let i = 0; i < _json.length; i++) {
-			//console.log(_json[i].imgjson);
+		
 			var id = _json[i].id;
 			var titulo:string = _json[i].title.rendered;
 			var teaser: string = _json[i].excerpt.rendered;
@@ -33,7 +33,8 @@ export class NoticiasService {
 			var logoMarca = _json[i].logomarca;
 			var imgjson = _json[i].imgjson;
 			var contenido = _json[i].content.rendered;
-
+			teaser = this.arreglarStrings('<p>','',teaser);
+			teaser = this.arreglarStrings('</p>','',teaser);
     		let n = new Noticia(id, titulo.substring(0,90) ,teaser.substring(3,120) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
     		ArregloNoticias.push(n);
 		}
@@ -93,18 +94,21 @@ export class NoticiasService {
 					result => {
 						imgDatos = result;
 						allnoti[i].urlImg = imgDatos.source_url;
-						console.log(allnoti[i].urlImg);
+					
 					},
 					error => {
 						errorMessage = <any>error;
 						if (errorMessage !== null){
 							allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/prev.jpg';
 							console.log(errorMessage);
-	//						alert("Error en la peticion de imagenes");
 						}
 					});
 			}
 		}
 	return allnoti;
+	}
+
+	arreglarStrings(_dato, _remplazo, _string:string){
+		return _string.replace(_dato,_remplazo);
 	}
 }
