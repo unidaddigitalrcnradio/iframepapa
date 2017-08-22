@@ -1,10 +1,15 @@
-   $("#owl-demo").owlCarousel({
+// Frases  
+$(document).ready(function() {
+      $("#owl-demo").owlCarousel({
 
-      navigation : true,
-      slideSpeed : 300,
-      paginationSpeed : 400,
-      singleItem : true
-
+        navigation : false,
+        pagination:false,
+        slideSpeed : 300,
+        autoPlay: 9000, //Set AutoPlay to 3 seconds
+        paginationSpeed : 400,
+        singleItem : true,
+        transitionStyle : "fade",
+    
       // "singleItem:true" is a shortcut for:
       // items : 1, 
       // itemsDesktop : false,
@@ -12,4 +17,28 @@
       // itemsTablet: false,
       // itemsMobile : false
 
-   });
+      });
+    });
+
+
+// Galeria
+  $(document).ready(function() {
+      $("#owl-galeria").owlCarousel({
+
+        navigation : false,
+        pagination:false,
+        slideSpeed : 300,
+        autoPlay: 9000, //Set AutoPlay to 3 seconds
+        paginationSpeed : 400,
+        singleItem : true,
+        transitionStyle : "fade",
+    
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
