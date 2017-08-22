@@ -1,54 +1,49 @@
-import {Injectable}   from '@angular/core';
+	// tslint:disable-next-line:indent
+import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import { Headers, RequestOptions } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
-import "rxjs/add/operator/map";
+import 'rxjs/add/operator/map';
 
 import {Noticia} from './noticias';
 
 @Injectable()
 export class NoticiasService {
+	// tslint:disable-next-line:indent
+	constructor(private _http: Http) { }
 
-    constructor(private _http: Http) { }
-
-
-   	getJson(_url){
-        
-        // petición por get a esa url de un api rest de pruebas
-        let ObjJson = this._http.get(_url)
-                            .map(res => res.json());    
-        return ObjJson;
-    }
-
-
-    crearObjNoti(_json){
+	getJson(_url){
+		// petición por get a esa url de un api rest de pruebas
+		let ObjJson = this._http.get(_url).map(res => res.json());
+		return ObjJson;
+	}
+	
+	crearObjNoti(_json){
     	
     	let ArregloNoticias:Noticia[]=[];
     	//let valor1 = _json.length;
     	//console.log(_json);
-    	for (var i = 0; i < _json.length; i++) {
-    		
+    	// tslint:disable-next-line:indent
+    	for (let i = 0; i < _json.length; i++) {
+			//console.log(_json[i].imgjson);
     		let n = new Noticia(_json[i].id, _json[i].title.rendered, _json[i].excerpt.rendered, _json[i].date, _json[i].link, _json[i].logomarca, _json[i].imgjson, _json[i].content.rendered);	
     		ArregloNoticias.push(n);
-    	}
-
-    	return ArregloNoticias;
+		}
+		return ArregloNoticias;
 	}
 
+//Crea una lista completa y la ordena 
 	crearListaCompleta(noti1: Noticia[] ,not12: Noticia[]){
-		let ArregloNoticias:Noticia[]=[];
+		let ArregloNoticias:Noticia[];
 
 		for(let _n of noti1)
-		{
-			ArregloNoticias.push(_n);
+		{ArregloNoticias.push(_n);
 
 		}
 
 		for (let _n2 of not12)
-		{
-
-			ArregloNoticias.push(_n2);
+		{ArregloNoticias.push(_n2);
 		}
 
 		
@@ -72,13 +67,24 @@ export class NoticiasService {
 
 	}
 
-	 swapElements(i: number, j: number, arg: Noticia[]) 
-	{
+	 swapElements(i: number, j: number, arg: Noticia[]){
 		var temp;
 		temp = 	arg[i];
 		arg[i] = arg[j];
-		arg[j] = temp;					
+		arg[j] = temp;
 
-		 
+	}
+	addImagenJson(allnoti: Noticia[]){
+		for (let i = 0; i < allnoti.length; i++) {
+			let imgDatos;
+			this.getJson(allnoti[i].urlImg).subscribe(
+				result=>{
+					imgDatos = result;
+					allnoti[i].urlImg = imgDatos.source_url;
+					console.log(allnoti[i].urlImg);
+				});
+			
+		}
+	return allnoti;
 	}
 }
