@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as jQuery from 'jquery';
-import {epi} from 'js-contador/jquery.epiclock.min.js';
+//import {epi} from 'js-contador/jquery.epiclock.min.js';
 
 declare var $:any;
 @Component({

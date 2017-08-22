@@ -380,11 +380,48 @@ span.plus {
 .tool--right-c {
     left: -107px;
 }
-
-.tool--right-m {
-    
+.tool.tool--right-m {
+    left: -78px;
+    width: 107px;
+    text-align: left;
+    top: 12px;
 }
-
+.tool--right-m .hover-tool {
+    left: -320px;
+    margin-top: 3px;
+}
+.hint:hover .tool--right-m .hover-tool {
+    left: -310px;
+}
+.tool.tool--right-v {
+    left: 39px;
+    width: 107px;
+    text-align: left;
+}
+.tool--right-v .hover-tool {
+    left: -320px;
+    margin-top: 3px;
+}
+.hint:hover .tool--right-v .hover-tool {
+    left: -310px;
+}
+.recorridoAgenda {
+    margin-left: 26%;
+    margin-top: 22%;
+}
+.recorridoAgenda a {
+    padding: 5px 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #EB1E19;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    font-size: 21px;
+    border-radius: 5px;
+    margin-top: 13px;
+    float: left;
+    box-shadow: #959595 1px 1px 3px;
+}
 .tool {
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
@@ -413,10 +450,7 @@ span.plus {
     -moz-transition: background 300ms ease-out 0s;
     -ms-transition: background 300ms ease-out 0s;
     -o-transition: background 300ms ease-out 0s;
-    transition: background 300ms ease-out 0s;
-
-    
-    
+    transition: background 300ms ease-out 0s;   
 }
 
 .tool--right .hover-tool {
@@ -482,5 +516,27 @@ span.plus {
   }
 }
 
+.frases {
+    background-image: url(assets/img/bg_frases.png);
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.frases h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #603813;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    background-image: url(assets/img/bg_title_sec.png);
+    background-repeat: no-repeat;
+    background-position: center 39px;
+    padding-bottom: 3%;
+    margin-top: 2.1%;
+}
 
-
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
