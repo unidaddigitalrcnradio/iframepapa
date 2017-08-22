@@ -179,7 +179,7 @@ header {
 }
 
 .wrap_img {
-    height: 215px;
+    height: 170px;
     overflow: hidden;
 }
 .card h1::after { 

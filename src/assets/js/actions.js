@@ -1,3 +1,9 @@
+  $(".ultimair").click(function() {
+      $('html, body').animate({
+          scrollTop: $("#ultima").offset().top - 40
+      }, 1000);
+      $('.header').removeClass('active');
+  });
 // Frases  
 $(document).ready(function() {
       $("#owl-demo").owlCarousel({
