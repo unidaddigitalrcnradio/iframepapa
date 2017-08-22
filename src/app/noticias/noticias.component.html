@@ -7,7 +7,7 @@
                 <img class="imgw100" src="{{ data.urlImg }}" alt="">
                 <div class="card">
                     <h1 class="titleN" [innerHTML] = "data.titulo"></h1>
-                    <div class="date">AGO 15, 9:07 AM</div>
+                    <div class="date">{{ data.dateNoti | date: 'mediumDate'}}</div>
                     <div class="descript" [innerHTML] = "data.teaser">
                         <p>Descripcion corta de la noticia dos renglones seguidos</p>
                     </div>

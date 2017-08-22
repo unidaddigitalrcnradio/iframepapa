@@ -21,33 +21,40 @@ export class NoticiasService {
 	
 	crearObjNoti(_json){
     	
-    	let ArregloNoticias:Noticia[]=[];
-    	//let valor1 = _json.length;
-    	//console.log(_json);
-    	// tslint:disable-next-line:indent
+		let ArregloNoticias:Noticia[] = [];
+
     	for (let i = 0; i < _json.length; i++) {
 			//console.log(_json[i].imgjson);
-    		let n = new Noticia(_json[i].id, _json[i].title.rendered, _json[i].excerpt.rendered, _json[i].date, _json[i].link, _json[i].logomarca, _json[i].imgjson, _json[i].content.rendered);	
+			var id = _json[i].id;
+			var titulo:string = _json[i].title.rendered;
+			var teaser: string = _json[i].excerpt.rendered;
+			var fecha:Date = _json[i].date;
+			var rutaUrl = _json[i].link;
+			var logoMarca = _json[i].logomarca;
+			var imgjson = _json[i].imgjson;
+			var contenido = _json[i].content.rendered;
+
+    		let n = new Noticia(id, titulo.substring(0,90) ,teaser.substring(3,120) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
     		ArregloNoticias.push(n);
 		}
 		return ArregloNoticias;
 	}
 
 //Crea una lista completa y la ordena 
-	crearListaCompleta(noti1: Noticia[] ,not12: Noticia[]){
-		let ArregloNoticias:Noticia[];
+	crearListaCompleta(noti1: Noticia[] ,noti2: Noticia[]){
+		let ArregloNoticias1:Noticia[] = [];
 
-		for(let _n of noti1)
-		{ArregloNoticias.push(_n);
+		for (const _n of noti1)
+		{ArregloNoticias1.push(_n);
 
 		}
 
-		for (let _n2 of not12)
-		{ArregloNoticias.push(_n2);
+		for (const _n2 of noti2)
+		{ArregloNoticias1.push(_n2);
 		}
 
 		
-		var n = ArregloNoticias.length;
+		var n = ArregloNoticias1.length;
 		var k;
 
 			
@@ -55,15 +62,15 @@ export class NoticiasService {
 		{
 			for (var i = 0; i < n - 1; i++) {
 				k = 1 +i;
-				if(ArregloNoticias[i].dateNoti < ArregloNoticias[k].dateNoti)
+				if(ArregloNoticias1[i].dateNoti < ArregloNoticias1[k].dateNoti)
 				{
-					this.swapElements(i,k, ArregloNoticias);
+					this.swapElements(i,k, ArregloNoticias1);
 				}
 			}
 		
 			
 		}
-		return ArregloNoticias;
+		return ArregloNoticias1;
 
 	}
 
@@ -74,16 +81,29 @@ export class NoticiasService {
 		arg[j] = temp;
 
 	}
-	addImagenJson(allnoti: Noticia[]){
+	addImagenJson(allnoti){
+		let errorMessage;
 		for (let i = 0; i < allnoti.length; i++) {
 			let imgDatos;
-			this.getJson(allnoti[i].urlImg).subscribe(
-				result=>{
-					imgDatos = result;
-					allnoti[i].urlImg = imgDatos.source_url;
-					console.log(allnoti[i].urlImg);
-				});
-			
+			let valor:string = allnoti[i].urlImg;
+			if (valor === 'sinImagen'){
+				allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/prev.jpg';
+			}else{
+				this.getJson(valor).subscribe(
+					result => {
+						imgDatos = result;
+						allnoti[i].urlImg = imgDatos.source_url;
+						console.log(allnoti[i].urlImg);
+					},
+					error => {
+						errorMessage = <any>error;
+						if (errorMessage !== null){
+							allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/prev.jpg';
+							console.log(errorMessage);
+	//						alert("Error en la peticion de imagenes");
+						}
+					});
+			}
 		}
 	return allnoti;
 	}
