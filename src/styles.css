@@ -63,6 +63,68 @@ header {
     background: black;
     padding-top: 1%;
 }
+.contador .title {
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 41px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    background-image: url(assets/img/bg_cont.png);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    padding-bottom: 40px;
+}
+
+#clock {
+    text-align: center;
+    padding: 5px 0;
+    color: white;
+}
+
+.contador {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    margin-top: 130px;
+}
+
+
+
+#clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #00BF96;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #00816A;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
 .radio {
     background-color: #3E519B;
     text-align: center;
@@ -127,6 +189,7 @@ h1.titleN {
     font-size: 12px;
     font-weight: 500;
 }
+
 .w100 {
     width: 100%;
 }
@@ -314,7 +377,51 @@ span.plus {
     right: auto;
   /*  background: #fff; */
 }
-
+.tool--right-c {
+    left: -107px;
+}
+.tool.tool--right-m {
+    left: -78px;
+    width: 107px;
+    text-align: left;
+    top: 12px;
+}
+.tool--right-m .hover-tool {
+    left: -320px;
+    margin-top: 3px;
+}
+.hint:hover .tool--right-m .hover-tool {
+    left: -310px;
+}
+.tool.tool--right-v {
+    left: 39px;
+    width: 107px;
+    text-align: left;
+}
+.tool--right-v .hover-tool {
+    left: -320px;
+    margin-top: 3px;
+}
+.hint:hover .tool--right-v .hover-tool {
+    left: -310px;
+}
+.recorridoAgenda {
+    margin-left: 26%;
+    margin-top: 22%;
+}
+.recorridoAgenda a {
+    padding: 5px 16px;
+    text-align: center;
+    color: #fff;
+    background-color: #EB1E19;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    font-size: 21px;
+    border-radius: 5px;
+    margin-top: 13px;
+    float: left;
+    box-shadow: #959595 1px 1px 3px;
+}
 .tool {
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
@@ -332,7 +439,7 @@ span.plus {
  
     font-size: 19px;
     line-height: 1em;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     top: 58%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -343,10 +450,7 @@ span.plus {
     -moz-transition: background 300ms ease-out 0s;
     -ms-transition: background 300ms ease-out 0s;
     -o-transition: background 300ms ease-out 0s;
-    transition: background 300ms ease-out 0s;
-
-    
-    
+    transition: background 300ms ease-out 0s;   
 }
 
 .tool--right .hover-tool {
@@ -388,6 +492,7 @@ span.plus {
     visibility: visible;
     opacity: 1;
 }
+
 @-webkit-keyframes pulsate {
     0% {
     -moz-transform: scale(1);
@@ -411,5 +516,27 @@ span.plus {
   }
 }
 
+.frases {
+    background-image: url(assets/img/bg_frases.png);
+    background-position: center 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.frases h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #603813;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    background-image: url(assets/img/bg_title_sec.png);
+    background-repeat: no-repeat;
+    background-position: center 39px;
+    padding-bottom: 3%;
+    margin-top: 2.1%;
+}
 
-
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
