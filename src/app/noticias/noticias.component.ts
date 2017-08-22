@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 import {NoticiasService} from '../noticias/noticias.service';
 import {ArrayNoticias} from '../noticias/arraynoticia';
 import {Noticia} from '../noticias/noticias';
- 
+
+// Declaramos las variables para jQuery
+declare var jQuery:any;
+declare var $:any;
+
 @Component({
   selector: 'noticias',
   templateUrl: './noticias.component.html',
@@ -19,6 +23,10 @@ public arrayFM: Array<Noticia>;
 public arrayRCN: Array<Noticia>;
 public allNoti;
 public finNoti;
+public finBloque1;
+public finBloque2;
+public finBloque3;
+public contNoticia = 'news2';
 
 constructor(private _notiServ: NoticiasService){
     this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=50')
@@ -26,10 +34,10 @@ constructor(private _notiServ: NoticiasService){
                                         result => {
                                                 this.jsonFm = result;
                                                 //Recorrer el arreglo
-                                                for(let _p of this.jsonFm){
+                                                for (let _p of this.jsonFm){
                                                     _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/logof.png';
                                                     let valor;
-                                                    if(_p._links['wp:featuredmedia']){
+                                                    if (_p._links['wp:featuredmedia']){
                                                         valor = _p._links['wp:featuredmedia']['0']['href'];
                                                     }else{
                                                         valor = 'sinImagen';
@@ -42,7 +50,7 @@ constructor(private _notiServ: NoticiasService){
                                                     result => {
                                                             this.jsonRcn = result;
                                                             //Recorrer el arreglo
-                                                            for(let _p of this.jsonRcn){
+                                                            for (let _p of this.jsonRcn){
                                                                 // tslint:disable-next-line:max-line-length
                                                                 _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/logor.png';
                                                                 let valor;
@@ -57,21 +65,24 @@ constructor(private _notiServ: NoticiasService){
 
                                                                 this.allNoti = this.unirArchivos(this.arrayFM , this.arrayRCN );
                                                                 this.finNoti = this.traerimagenes(this.allNoti);
+                                                                this.finBloque1 = this.add6(this.finNoti, 1);
+                                                                this.finBloque2 = this.add6(this.finNoti, 2);
+                                                                this.finBloque3 = this.add6(this.finNoti, 3);
                                                             },
                                                     error => {
                                                         this.errorMessage = <any>error;
-                                                        if(this.errorMessage !== null){
+                                                        if (this.errorMessage !== null){
                                                             console.log(this.errorMessage);
-                                                            alert("Error en la petición");
+                                                            alert('Error en la petición');
                                                         }
                                                     }
                                                 );
                                             },
                                         error => {
                                             this.errorMessage = <any>error;
-                                            if(this.errorMessage !== null){
+                                            if (this.errorMessage !== null){
                                                 console.log(this.errorMessage);
-                                                alert("Error en la petición");
+                                                alert('Error en la petición');
                                             }
                                         }
                                     );
@@ -84,5 +95,45 @@ constructor(private _notiServ: NoticiasService){
 
     traerimagenes(_arrayFinal){
         return this._notiServ.addImagenJson(_arrayFinal);
+    }
+    add6(_array,_bloque){
+        let _array6:Noticia[] = [];
+        switch (_bloque) {
+            case 1:
+                for (var i = 0; i < 6; i++) {
+                    _array6.push(_array[i]);
+                }
+                break;
+            case 2:
+                for (var i = 6; i < 12; i++) {
+                    _array6.push(_array[i]);
+                }
+                break;
+            case 3:
+                for (var i = 12; i < 18; i++) {
+                    _array6.push(_array[i]);
+                }
+                break;
+
+            default:
+                for (var i = 0; i < _array.length; i++) {
+                    _array6.push(_array[i]);
+                }
+                break;
+        }
+        return _array6;
+    }
+    agregarNoticias(){
+        if (this.contNoticia === 'news2'){
+                    // Usamos jQuery
+            $('.news2').slideToggle();
+            this.contNoticia = 'news3';
+
+        }else if (this.contNoticia === 'news3'){
+                    // Usamos jQuery
+            $('.news3').slideToggle();
+            this.contNoticia = 'news4';
+        }
+
     }
 }

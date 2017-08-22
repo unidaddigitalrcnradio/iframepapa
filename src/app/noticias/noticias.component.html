@@ -1,15 +1,15 @@
 <!-- Ultima hora  -->
 
 <div class="row">
-    <div class="large-4 columns"  *ngFor="let data of finNoti" >            
+    <div class="large-4 columns"  *ngFor="let data of finBloque1" >            
         <div class="news">
            <a href="{{ data.urlNoti }}" target="_blank">
                 <img class="imgw100" src="{{ data.urlImg }}" alt="">
                 <div class="card">
-                    <h1 class="titleN" [innerHTML] = "data.titulo"></h1>
+                    <h1 class="titleN" [innerHTML] = "data.titulo">...</h1>
                     <div class="date">{{ data.dateNoti | date: 'mediumDate'}}</div>
-                    <div class="descript" [innerHTML] = "data.teaser">
-                        <p>Descripcion corta de la noticia dos renglones seguidos</p>
+                    <div class="descript">
+                        <p [innerHTML] = 'data.teaser' >...</p>
                     </div>
                     <div class="logoportal">
                         <img src="{{data.urlLogoMarca}}" alt="">
@@ -18,8 +18,43 @@
             </a>
         </div>                                    
   </div>
+<div class="large-4 columns"  *ngFor="let data2 of finBloque2" >            
+    <div class="news2" style="display:none">
+       <a href="{{ data2.urlNoti }}" target="_blank">
+            <img class="imgw100" src="{{ data2.urlImg }}" alt="">
+            <div class="card">
+                <h1 class="titleN" [innerHTML] = "data2.titulo"></h1>
+                <div class="date">{{ data2.dateNoti | date: 'mediumDate'}}</div>
+                <div class="descript" >
+                    <p [innerHTML] = 'data2.teaser' ></p>
+                </div>
+                <div class="logoportal">
+                    <img src="{{data2.urlLogoMarca}}" alt="">
+                </div>
+            </div>
+        </a>
+    </div>                                    
+</div>
+<div class="large-4 columns"  *ngFor="let data3 of finBloque3" >            
+    <div class="news3" style="display:none">
+       <a href="{{ data3.urlNoti }}" target="_blank">
+            <img class="imgw100" src="{{ data3.urlImg }}" alt="">
+            <div class="card">
+                <h1 class="titleN" [innerHTML] = "data3.titulo"></h1>
+                <div class="date">{{ data3.dateNoti | date: 'mediumDate'}}</div>
+                <div class="descript">
+                    <p [innerHTML] = 'data3.teaser' ></p>
+                </div>
+                <div class="logoportal">
+                    <img src="{{data3.urlLogoMarca}}" alt="">
+                </div>
+            </div>
+        </a>
+    </div>                                    
+</div>
 </div>  
 
 <div class="vermas">
-    <a href="#">VER MAS</a>
+    <!-- <a href="#">VER MAS</a> -->
+    <button (click)="agregarNoticias()">Mostrar titulo</button>
 </div>

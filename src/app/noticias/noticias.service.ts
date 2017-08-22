@@ -35,7 +35,7 @@ export class NoticiasService {
 			var contenido = _json[i].content.rendered;
 			teaser = this.arreglarStrings('<p>','',teaser);
 			teaser = this.arreglarStrings('</p>','',teaser);
-    		let n = new Noticia(id, titulo.substring(0,90) ,teaser.substring(3,120) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
+    		let n = new Noticia(id, titulo.substring(0,60) ,teaser.substring(3,100) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
     		ArregloNoticias.push(n);
 		}
 		return ArregloNoticias;
