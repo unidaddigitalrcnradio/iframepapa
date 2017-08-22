@@ -35,7 +35,11 @@ export class NoticiasService {
 			var contenido = _json[i].content.rendered;
 			teaser = this.arreglarStrings('<p>','',teaser);
 			teaser = this.arreglarStrings('</p>','',teaser);
+<<<<<<< HEAD
     		let n = new Noticia(id, titulo.substring(0,60) ,teaser.substring(3,100) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
+=======
+    		let n = new Noticia(id, titulo.substring(0,65) ,teaser.substring(3,90) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
+>>>>>>> fb4b827b669685630e59ee471988eeb26fb91cc7
     		ArregloNoticias.push(n);
 		}
 		return ArregloNoticias;
