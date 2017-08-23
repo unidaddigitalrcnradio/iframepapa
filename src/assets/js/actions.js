@@ -28,7 +28,7 @@ $("#owl-galeria").owlCarousel({
         navigation : false,
         pagination:false,
         slideSpeed : 300,
-        autoPlay: 9000, //Set AutoPlay to 3 seconds
+        autoPlay: 6000, //Set AutoPlay to 3 seconds
         paginationSpeed : 400,
         singleItem : true,
         transitionStyle : "fade",

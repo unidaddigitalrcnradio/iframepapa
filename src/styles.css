@@ -1,6 +1,6 @@
 .logo_rcn {
     text-align: center;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 .center {
     display: block;
@@ -51,12 +51,23 @@ a.galeriair {
     transition: all 0.3s;  
 }
 header {
-    margin: 1% 0 1.2% 0;
+    margin: 0 0 1.2% 0;
+    position: fixed;
+    width: 100%;
+    background: white;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    z-index: 3;
 }
 .cenefa {
     background-image: url(assets/img/cenefa.png);
-    background-repeat: repeat-x;
-  padding: 10px 0;
+        background-repeat: repeat-x;
+    padding: 10px 0;
+    float: left;
+    width: 100%;
+    margin-top: 94px;
+    background-color: white;
 }
 .btn_ver {
     background-image: url(assets/img/sprite_envivos.png);
@@ -788,8 +799,8 @@ footer {
     position: absolute;
     right: 0;
     text-align: right;
-    width: 82px;
-    top: 4px;
+    width: 90px;
+    top: 10px;
     }
     .bg-black iframe {
     height: 330px;
@@ -881,7 +892,7 @@ footer {
     height: 50px;
     padding-top: 5px;
     position: absolute;
-    top: 22px;
+    top: 18px;
     left: 0px;
     }
 
