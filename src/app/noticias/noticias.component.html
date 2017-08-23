@@ -8,8 +8,9 @@
                     <img class="imgw100" src="{{ data.urlImg }}" alt="">
                 </div>
                 <div class="card">
+                     <div class="date">{{ data.dateNoti | date: 'mediumDate'}}</div>
                     <h1 class="titleN" [innerHTML] = "data.titulo">...</h1>
-                    <div class="date">{{ data.dateNoti | date: 'mediumDate'}}</div>
+                  
                     <div class="descript">
                         <p [innerHTML] = 'data.teaser' ></p>
                     </div>
@@ -27,8 +28,9 @@
                         <img class="imgw100" src="{{ data2.urlImg }}" alt="">
                     </div>
                     <div class="card">
+                       <div class="date">{{ data2.dateNoti | date: 'mediumDate'}}</div>
                         <h1 class="titleN" [innerHTML] = "data2.titulo">...</h1>
-                        <div class="date">{{ data2.dateNoti | date: 'mediumDate'}}</div>
+                        
                         <div class="descript">
                             <p [innerHTML] = 'data2.teaser' ></p>
                         </div>
@@ -46,8 +48,9 @@
                         <img class="imgw100" src="{{ data3.urlImg }}" alt="">
                     </div>
                     <div class="card">
-                        <h1 class="titleN" [innerHTML] = "data3.titulo">...</h1>
                         <div class="date">{{ data3.dateNoti | date: 'mediumDate'}}</div>
+                        <h1 class="titleN" [innerHTML] = "data3.titulo">...</h1>
+                       
                         <div class="descript">
                             <p [innerHTML] = 'data3.teaser' ></p>
                         </div>
@@ -62,5 +65,9 @@
 
 <div class="vermas">
     <!-- <a href="#">VER MAS</a> -->
+<<<<<<< HEAD
     <button (click)="agregarNoticias()">VER MAS</button>
+=======
+    <button (click)="agregarNoticias()">Ver mas Noticias</button>
+>>>>>>> 0cd3b37b9bf0982bc2ad5e7bf454c69b7cebd479
 </div>
