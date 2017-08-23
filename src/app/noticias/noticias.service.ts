@@ -28,14 +28,33 @@ export class NoticiasService {
 			var id = _json[i].id;
 			var titulo:string = _json[i].title.rendered;
 			var teaser: string = _json[i].excerpt.rendered;
+
 			var fecha:Date = _json[i].date;
 			var rutaUrl = _json[i].link;
 			var logoMarca = _json[i].logomarca;
 			var imgjson = _json[i].imgjson;
 			var contenido = _json[i].content.rendered;
+			if (teaser === ''){
+				let contRemp:string = contenido.trim();
+				contRemp = this.arreglarStrings('<p style="text-align: justify;">',' ', contRemp).trim();
+				contRemp = this.arreglarStrings('<p><!--more--></p>',' ', contRemp);
+				contRemp = this.arreglarStrings('<p><!--more--></p>',' ', contRemp);
+				contRemp = this.arreglarStrings('<p>',' ', contRemp);
+				contRemp = this.arreglarStrings('</p>',' ', contRemp);
+				contRemp = this.arreglarStrings('<strong>',' ', contRemp);
+				contRemp = this.arreglarStrings('</strong>',' ', contRemp);
+				teaser = contRemp.substring(0,87);
+			}else{
+				teaser = teaser.trim();
+				teaser = this.arreglarStrings('<p>',' ', teaser);
+				teaser = this.arreglarStrings('</p>',' ', teaser);
+				teaser = this.arreglarStrings('<strong>',' ', teaser);
+				teaser = this.arreglarStrings('</strong>',' ', teaser);
+			}
+			console.log(teaser);
 			teaser = this.arreglarStrings('<p>','',teaser);
 			teaser = this.arreglarStrings('</p>','',teaser);
-    		let n = new Noticia(id, titulo.substring(0,65) ,teaser.substring(3,90) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
+    		let n = new Noticia(id, titulo.substring(0,65) ,teaser.substring(0,87) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
     		ArregloNoticias.push(n);
 		}
 		return ArregloNoticias;
