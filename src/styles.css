@@ -12,6 +12,11 @@
     display: table;
     margin-top: 30px;
 }
+
+
+.menu > li > a:last-child {
+    background: #ff0000;
+}
 /* .menu a {
       border-right: 1px solid red;
 } */
@@ -667,3 +672,12 @@ footer {
    /* font-family: 'Oswald', sans-serif;
     font-weight: 500; */
 }
+
+/***** Media querys *****/
+
+
+
+/***** /Media querys *****/
+
+
+
