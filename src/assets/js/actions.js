@@ -1,7 +1,14 @@
 
 $(document).ready(function() {
 //Menu
-      
+    
+$('#nav-icon1').click(function(){
+		$(this).toggleClass('open');
+	});
+$('.block').click( 'fast', function(){
+		$('.d-tablet').slideToggle("openMenu");    
+	});
+    
 // Frases  
 $("#owl-demo").owlCarousel({
         navigation : false,
