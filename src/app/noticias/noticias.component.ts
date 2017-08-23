@@ -45,7 +45,7 @@ constructor(private _notiServ: NoticiasService){
                                                     _p.imgjson = valor;
                                                 }
                                                 this.arrayFM = this._notiServ.crearObjNoti(this.jsonFm);
-                                                this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=45691')
+                                                this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?categories=45691')
                                                 .subscribe(
                                                     result => {
                                                             this.jsonRcn = result;
