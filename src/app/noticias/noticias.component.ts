@@ -26,10 +26,10 @@ public finNoti;
 public finBloque1;
 public finBloque2;
 public finBloque3;
-public contNoticia = 'news2';
+public contNoticia = 'bloque2';
 
 constructor(private _notiServ: NoticiasService){
-    this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?filter[cat]=50')
+    this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?categories=12556')
                                     .subscribe(
                                         result => {
                                                 this.jsonFm = result;
@@ -45,7 +45,7 @@ constructor(private _notiServ: NoticiasService){
                                                     _p.imgjson = valor;
                                                 }
                                                 this.arrayFM = this._notiServ.crearObjNoti(this.jsonFm);
-                                                this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?filter[cat]=23')
+                                                this._notiServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts?categories=45691')
                                                 .subscribe(
                                                     result => {
                                                             this.jsonRcn = result;
@@ -124,15 +124,15 @@ constructor(private _notiServ: NoticiasService){
         return _array6;
     }
     agregarNoticias(){
-        if (this.contNoticia === 'news2'){
+        if (this.contNoticia === 'bloque2'){
                     // Usamos jQuery
-            $('.news2').slideToggle();
-            this.contNoticia = 'news3';
+            $('.bloque2').slideToggle();
+            this.contNoticia = 'bloque3';
 
-        }else if (this.contNoticia === 'news3'){
+        }else if (this.contNoticia === 'bloque3'){
                     // Usamos jQuery
-            $('.news3').slideToggle();
-            this.contNoticia = 'news4';
+            $('.bloque3').slideToggle();
+            this.contNoticia = 'bloque4';
         }
 
     }
