@@ -127,7 +127,9 @@ header {
 	font-size: 16px;
 }
 
-
+.logo_rcn img{
+   width: 103px; 
+}
 
 
 
@@ -786,8 +788,8 @@ footer {
     position: absolute;
     right: 0;
     text-align: right;
-    width: 95px;
-    top: 9px;
+    width: 82px;
+    top: 4px;
     }
     .bg-black iframe {
     height: 330px;
@@ -800,6 +802,38 @@ footer {
     .contador {
     display: none;
     }
+    .perfil h1 {
+    padding-bottom: 52px;
+    }
+    .agenda h1 {
+    padding-bottom: 30px;
+    }
+    .w60 {
+    width: 80%;
+    }
+    #owl-demo .item {
+
+    font-size: 23px;
+
+    }
+    .mobile100 {
+    width: 100%;
+    }
+    .recorridoAgenda p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    font-size: 57px;
+    line-height: 0.9;
+    color: #603813;
+    text-shadow: rgba(7, 7, 7, 0.33) 2px 1px 1px;
+    text-align: center;
+    }
+    .perfil p {
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding: 5%;
+    background: rgba(255, 255, 255, 0.81);
+    }
     .news h1 {
     text-align: center;
     font-size: 25px;
@@ -809,11 +843,28 @@ footer {
     padding-bottom: 33px;
     margin-top: 2.1%;
     }
+    .w80 {
+    width: 100%;
+    padding: 0;
+    }
     h1.titleN {
     text-align: left !important;
     margin: 0;
     padding: 0;
     font-weight: 400;
+    }
+    .galeria h1 {
+        padding-bottom: 30px;
+        }
+    .frases {
+    background-position: center 0px;
+    background-size: cover;
+    height: auto;
+    text-align: center;
+    padding-bottom: 40px;
+    }
+    .frases h1 {
+    padding-bottom: 30px;
     }
     .center {
     text-align: center;
@@ -847,44 +898,45 @@ footer {
     position: relative;
     padding-top: 5%;
     padding-bottom: 5%;
-}
+    }
     .perfil p {
     margin-bottom: 1%;
     margin-top: 1%;
-}
- .perfil img {
+    position: relative;
+    }
+    .perfil img {
     position: absolute;
     bottom: 0;
     width: 285px;
-}
+    }
     .recorridoAgenda {
     margin-top: 2%;
     text-align: center;
-        margin-left: 0;
-}
-.recorridoAgenda a {
+    margin-left: 0;
+    }
+    .recorridoAgenda a {
     float: none;
     display: block;
     margin: 10px auto;
     width: 70%;
-    margin-top: 40px;
-}
+    margin-top: 22px;
+    }
     #hide {
-        display: none;
+    display: none;
     }  
     .agenda {
     background-position: center 0px;
     padding-bottom: 6%;
     padding-top: 3%;
     background-repeat: no-repeat;
-}
- .menu > li {
+    }
+    .menu > li {
     width: 100%;
     display: block;
     background: #31509f;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     padding-bottom: 0;
-}
+    }
     .menu > li:hover {
     background: none;
     }
@@ -909,7 +961,7 @@ footer {
     padding-bottom: 10px;
     display: none;
 
-}
+    }
     
     
     

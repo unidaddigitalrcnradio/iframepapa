@@ -1,6 +1,9 @@
 
 $(document).ready(function() {
-//Menu
+// Player
+    
+    
+// Menu
     
 $('#nav-icon1').click(function(){
 		$(this).toggleClass('open');
@@ -29,10 +32,7 @@ $("#owl-galeria").owlCarousel({
         paginationSpeed : 400,
         singleItem : true,
         transitionStyle : "fade",
-      });  
-    
-    
-    
+      });              
 });
 
 
