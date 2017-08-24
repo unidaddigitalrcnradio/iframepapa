@@ -54,7 +54,7 @@ export class NoticiasService {
 			//console.log(teaser);
 			teaser = this.arreglarStrings('<p>','',teaser);
 			teaser = this.arreglarStrings('</p>','',teaser);
-    		let n = new Noticia(id, titulo.substring(0,65) ,teaser.substring(0,87) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
+    		let n = new Noticia(id, titulo.substring(0,73) ,teaser.substring(0,78) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
     		ArregloNoticias.push(n);
 		}
 		return ArregloNoticias;
