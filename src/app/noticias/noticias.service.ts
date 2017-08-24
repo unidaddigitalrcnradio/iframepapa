@@ -51,7 +51,7 @@ export class NoticiasService {
 				teaser = this.arreglarStrings('<strong>',' ', teaser);
 				teaser = this.arreglarStrings('</strong>',' ', teaser);
 			}
-			console.log(teaser);
+			//console.log(teaser);
 			teaser = this.arreglarStrings('<p>','',teaser);
 			teaser = this.arreglarStrings('</p>','',teaser);
     		let n = new Noticia(id, titulo.substring(0,65) ,teaser.substring(0,87) ,fecha , rutaUrl,logoMarca , imgjson ,contenido);	
@@ -107,7 +107,7 @@ export class NoticiasService {
 			let imgDatos;
 			let valor:string = allnoti[i].urlImg;
 			if (valor === 'sinImagen'){
-				allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/prev.jpg';
+				allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/prev.jpg';
 			}else{
 				this.getJson(valor).subscribe(
 					result => {
@@ -118,7 +118,7 @@ export class NoticiasService {
 					error => {
 						errorMessage = <any>error;
 						if (errorMessage !== null){
-							allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/prev.jpg';
+							allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/prev.jpg';
 							console.log(errorMessage);
 						}
 					});

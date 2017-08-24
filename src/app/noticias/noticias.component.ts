@@ -35,7 +35,7 @@ constructor(private _notiServ: NoticiasService){
                                                 this.jsonFm = result;
                                                 //Recorrer el arreglo
                                                 for (let _p of this.jsonFm){
-                                                    _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/lafm/logof.png';
+                                                    _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/fm.jpg';
                                                     let valor;
                                                     if (_p._links['wp:featuredmedia']){
                                                         valor = _p._links['wp:featuredmedia']['0']['href'];
@@ -52,7 +52,7 @@ constructor(private _notiServ: NoticiasService){
                                                             //Recorrer el arreglo
                                                             for (let _p of this.jsonRcn){
                                                                 // tslint:disable-next-line:max-line-length
-                                                                _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/logor.png';
+                                                                _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/rcnradio.jpg';
                                                                 let valor;
                                                                 if (_p._links['wp:featuredmedia']){
                                                                     valor = _p._links['wp:featuredmedia']['0']['href'];

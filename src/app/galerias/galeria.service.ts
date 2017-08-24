@@ -29,4 +29,32 @@ export class GaleriaService {
 	    return ArregloGaleria;
 	}
 
+	buscarPalabra(_miCadena, _buscar:string){
+		let cuenta = 0;
+		let posicion = _miCadena.search(_buscar);
+		// while ( posicion != -1 ) {
+		//    cuenta++;
+		//    posicion = _miCadena.indexOf(_buscar,posicion+1);
+		// }
+		return posicion;
+	}
+	extraerImagen(_cadena:string){
+		let cadenaMod:string = _cadena;
+		let posMove = 0;
+		let arrayImg:String[] = [];
+		let _cadenaSplit = _cadena.split('<img');
+		let cuantoImgExisten = _cadenaSplit.length;
+		
+		for (var index = 0; index < cuantoImgExisten -1; index++) {
+			let posicionIni = this.buscarPalabra(cadenaMod, '<img');
+			cadenaMod = cadenaMod.substr(posicionIni, cadenaMod.length);
+			let posicionFin = this.buscarPalabra(cadenaMod, '/>');
+			let img = cadenaMod.substring(0, posicionFin+2);
+			arrayImg.push(img);
+			cadenaMod = cadenaMod.substr(posicionFin+2, cadenaMod.length)
+			
+		}
+		return arrayImg;
+	}
+
 }

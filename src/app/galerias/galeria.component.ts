@@ -30,23 +30,22 @@ public objGaleria;
 
 constructor(private _galServ: GaleriaService){
 
-        // this._galServ.getJson('http://www.rcnradio.com/wp-json/wp/v2/posts/364737')
-        //                             .subscribe(
-        //                                 result => {
-        //                                         this.galeriaJson = result;
-        //                                         console.log(this.galeriaJson);
-        //                                         //this.objGaleria = this._galServ.crearObjGaleria(this.galeriaJson);
-        //                                         let htmlContent = this.galeriaJson.content.rendered;
-        //                                         this.objGaleria = htmlContent.getElementBy('img').attr('src');
-        //                                         console.log(this.objGaleria);
-        //                                 },
-        //                                 error => {
-        //                                     this.errorMessage = <any>error;
-        //                                     if (this.errorMessage !== null){
-        //                                         console.log(this.errorMessage);
-        //                                         alert('Error en la petición');
-        //                                     }
-        //                                 }
-        //                             );
+        this._galServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts/63773')
+                                    .subscribe(
+                                        result => {
+                                                this.galeriaJson = result;
+                                                //console.log(this.galeriaJson);
+                                                //this.objGaleria = this._galServ.crearObjGaleria(this.galeriaJson);
+                                                let htmlContent = this.galeriaJson.content.rendered;
+                                                this.objGaleria = this._galServ.extraerImagen(htmlContent);
+                                          },
+                                        error => {
+                                            this.errorMessage = <any>error;
+                                            if (this.errorMessage !== null){
+                                                console.log(this.errorMessage);
+                                                alert('Error en la petición');
+                                            }
+                                        }
+                                    );
 	}
 }
