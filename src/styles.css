@@ -47,7 +47,7 @@ a.galeriair {
     background-position: center 28px;
 }   
 .menu > li > a:hover {
-   color: #603813;
+   color: #ba9b4b;
     transition: all 0.3s;  
 }
 header {
@@ -183,10 +183,12 @@ header {
     padding-bottom: 3%;
     margin-top: 2.1%;
 }
-
+.news .large-4 {
+    margin-bottom: 12px;
+}
 .descript {
     float: left;
-    height: 56px;
+    /* height: 56px; */
     overflow: hidden;
     font-family: 'Oswald', sans-serif;
     color: black;
@@ -195,13 +197,14 @@ header {
     line-height: 1.3;
     width: 100%;
 }
-.descript::after { 
+.descript p::after { 
     content: "...";
 }
 
 .wrap_img {
     height: 170px;
     overflow: hidden;
+    border-bottom: 3px solid rgb(189, 158, 76);
 }
 .card h1::after { 
     content: "...";
@@ -218,7 +221,7 @@ h1.titleN {
     color: #603813;
     font-family: 'Oswald', sans-serif;
     float: left;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     background-image: none;
     margin: 0;
@@ -241,11 +244,19 @@ h1.titleN {
     width: 100%;
 }
 .imgw100 { 
-    width: 100%;
-}
-.imgw100:hover {
+  max-width: 100%;
+  
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
     
 }
+.imgw100:hover {
+      -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .descript p {
     width: 100%;
     float: left;
@@ -253,14 +264,16 @@ h1.titleN {
     padding: 0;
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
-    font-size: 21px;
+    font-size: 20px;
     color: #000000;
     line-height: 1.2;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    margin-top: 6px;
 }
 .logoportal {
     float: left;
     margin-top: 5px;
+    height: 40px;
 }
 .card {
     display: block;
@@ -659,14 +672,16 @@ left: -30px;
 .rightc {
 background-image:url(assets/img/comilla-right.png);
 position: absolute;
-right: -20px;
+right: -35px;
 bottom: 35px;
 width: 40px;
 height: 40px;
 }
 .galeria {
     background-color: black;
-    padding: 2%;
+    padding: 0px 0 44px 0%;
+    border-bottom: 5px solid #bd9e4c;
+    border-top: 5px solid #BD9E4B;
 }
 .galeria h1 {
        text-align: center;
