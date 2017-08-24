@@ -5,12 +5,12 @@
         <h1>GALERIA</h1>
         <div class="large-12 columns">
         <div class="w80">
-            <div id="owl-galeria" class="owl-carousel" > 
-                <div class="item"  *ngFor="let img of objGaleria"> 
-                    <span [innerHTML] = 'img'></span>                
-                </div>                  
-            </div>
+            <div class="item"  *ngFor="let img of objGaleria"> 
+                <img src="{{img}}">             
+            </div>   
         </div>
         </div>
        </div> 
 </div>
+
+                              
