@@ -56,5 +56,15 @@ export class GaleriaService {
 		}
 		return arrayImg;
 	}
+	extraerURLimagen(_arreglo){
+		let arregloFinal:string[] = [];
+		for (var i = 0; i < _arreglo.length; i++) {
+			let posicionFin = this.buscarPalabra(_arreglo[i],'" ');
+
+			let url = _arreglo[i].substring(10,posicionFin);
+			arregloFinal.push(url);
+		}
+		return arregloFinal;
+	}
 
 }
