@@ -39,7 +39,7 @@ constructor(private _galServ: GaleriaService){
                                                 let htmlContent = this.galeriaJson.content.rendered;
                                                 let objImg = this._galServ.extraerImagen(htmlContent);
                                                 this.objGaleria = this._galServ.extraerURLimagen(objImg);
-                                                console.log(this.objGaleria);
+                                              
                                           },
                                         error => {
                                             this.errorMessage = <any>error;
