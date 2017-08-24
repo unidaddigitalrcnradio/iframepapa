@@ -51,6 +51,11 @@
 	-ms-user-select: none;
 	user-select: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
 }
 
 /* mouse grab icon */
