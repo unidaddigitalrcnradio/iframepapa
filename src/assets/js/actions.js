@@ -1,5 +1,10 @@
 
 $(document).ready(function() {
+// Contador  > https://codepen.io/SitePoint/pen/MwNPVq
+    
+    
+    
+    
 // Player
     
     
