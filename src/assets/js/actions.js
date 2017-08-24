@@ -1,3 +1,8 @@
+$(function () {    
+    var header = document.getElementById('header');
+    var headroom = new Headroom(header);
+    headroom.init();
+  });
 
 $(document).ready(function() {
 // Contador  > https://codepen.io/SitePoint/pen/MwNPVq
@@ -37,18 +42,20 @@ $("#owl-demo").owlCarousel({
         paginationSpeed : 400,
         singleItem : true,
         transitionStyle : "fade",
-      });    
-// Galeria    
-$("#owl-galeria").owlCarousel({
-
-        navigation : false,
-        pagination:false,
-        slideSpeed : 300,
-        autoPlay: 6000, //Set AutoPlay to 3 seconds
-        paginationSpeed : 400,
-        singleItem : true,
-        transitionStyle : "fade",
-      });              
+      });             
 });
-
-
+// Galeria 
+$(document).ready(function() {    
+     setTimeout(function(){   
+         $("#owl-galeria").owlCarousel({  
+            navigation : true,
+            navigationText : [" < "," > "],
+            pagination:false,
+            slideSpeed : 300,
+            autoPlay: 6000, //Set AutoPlay to 3 seconds
+            paginationSpeed : 400,
+            singleItem : true,
+            transitionStyle : "fade",             
+            }); 
+     }, 2000); 
+}); 
