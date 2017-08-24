@@ -137,21 +137,23 @@ header {
 
 #clockdiv > div{
     padding: 10px;
-    border-radius: 2px;
-    background: #303030;
+    border-radius: 2px;  
     display: inline-block;
-    border: 2px solid #888888;
+   /* border: 2px solid #ba9b4b;
+    background: #303030; */
 }
 
 #clockdiv div > span{
-	padding: 15px;
-	border-radius: 3px;
-	/* background: #00816A; */
-	display: inline-block;
+    padding: 15px;
+    border-radius: 3px;
+    display: inline-block;
     color: #FFFFFF;
     font-size: 37px;
-        font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-weight: bold;
+    background: #303030;
+    border: 2px solid #ba9b4b;
+    margin-top: 10px;
 }
 
 .smalltext{
