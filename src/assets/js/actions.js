@@ -3,12 +3,8 @@ $(function () {
     var headroom = new Headroom(header);
     headroom.init();
   });
-
 $(document).ready(function() {
-// Contador  > https://codepen.io/SitePoint/pen/MwNPVq
-    
-    
-    
+// Contador  > https://codepen.io/SitePoint/pen/MwNPVq            
     
 // Player
     
