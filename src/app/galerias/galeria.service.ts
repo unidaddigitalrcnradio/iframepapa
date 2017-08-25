@@ -31,10 +31,6 @@ export class GaleriaService {
 	buscarPalabra(_miCadena, _buscar:string){
 		let cuenta = 0;
 		let posicion = _miCadena.search(_buscar);
-		// while ( posicion != -1 ) {
-		//    cuenta++;
-		//    posicion = _miCadena.indexOf(_buscar,posicion+1);
-		// }
 		return posicion;
 	}
 	extraerImagen(_cadena:string){
@@ -53,7 +49,6 @@ export class GaleriaService {
 			cadenaMod = cadenaMod.substr(posicionFin+2, cadenaMod.length)
 			
 		}
-		console.log(arrayImg);
 		return arrayImg;
 
 	}
@@ -66,8 +61,6 @@ export class GaleriaService {
 			_arreglo[i] = _arreglo[i].substring(posicionIni, _arreglo[i].length);
 			let posicionFin = this.buscarPalabra(_arreglo[i],'" ');
 			let url = _arreglo[i].substring(5,posicionFin);
-
-			console.log(url);
 			arregloFinal.push(url);
 		}
 		return arregloFinal;
