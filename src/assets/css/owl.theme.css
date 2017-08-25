@@ -9,7 +9,18 @@
 }
 
 /* Styling Next and Prev buttons */
-
+.owl-prev {
+    position: absolute;
+    left: 0;
+    color: white !important;
+    opacity: 1 !important;
+}
+.owl-next {
+    position: absolute;
+    right: 0;
+    color: white !important;
+    opacity: 1 !important;
+}
 .owl-theme .owl-controls .owl-buttons div{
     color: #bd9e4c;
     display: inline-block;
@@ -20,7 +31,7 @@
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 30px;
-    background: #000000;
+    background: transparent;
     filter: Alpha(Opacity=50);
     opacity: 0.5;
     font-family: 'Oswald', sans-serif;
