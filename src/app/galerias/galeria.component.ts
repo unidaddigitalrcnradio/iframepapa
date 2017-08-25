@@ -30,7 +30,7 @@ public objGaleria;
 
 constructor(private _galServ: GaleriaService){
 
-        this._galServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts/63773')
+        this._galServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts/64334')
                                     .subscribe(
                                         result => {
                                                 this.galeriaJson = result;

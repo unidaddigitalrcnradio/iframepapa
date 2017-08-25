@@ -54,14 +54,21 @@ export class GaleriaService {
 			cadenaMod = cadenaMod.substr(posicionFin+2, cadenaMod.length)
 			
 		}
+		console.log(arrayImg);
 		return arrayImg;
+
 	}
 	extraerURLimagen(_arreglo){
 		let arregloFinal:string[] = [];
+		
 		for (var i = 0; i < _arreglo.length; i++) {
+			//let cadenaMod:string = _arreglo[i];
+			let posicionIni = this.buscarPalabra(_arreglo[i], 'src="')
+			_arreglo[i] = _arreglo[i].substring(posicionIni, _arreglo[i].length);
 			let posicionFin = this.buscarPalabra(_arreglo[i],'" ');
+			let url = _arreglo[i].substring(5,posicionFin);
 
-			let url = _arreglo[i].substring(10,posicionFin);
+			console.log(url);
 			arregloFinal.push(url);
 		}
 		return arregloFinal;
