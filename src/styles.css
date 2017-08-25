@@ -870,9 +870,28 @@ footer {
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
+.logo_b img {
+    padding-right: 10px;
+    width: 60px;
+}
 .openMenu {
     display: block !important;
 }
+#owl-demo .owl-controls {
+bottom: 40px !important;
+width: 120px;
+display: block;
+margin: 0px auto;
+}
+#owl-demo .owl-prev {
+color: #bd9e4b !important;
+font-size: 62px !important;
+}
+#owl-demo .owl-next {
+color: #bd9e4b !important;
+font-size: 62px !important;
+}
+
 /************/
 
 /***** Media querys *****/
@@ -898,8 +917,9 @@ footer {
     font-weight: 500;
     width: 100%;
     position: relative;
-    top: -81px;
+    top: 0;
     line-height: 1;
+    margin-bottom: 15px;
 }        
         
         

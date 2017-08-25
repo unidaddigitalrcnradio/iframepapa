@@ -4,19 +4,27 @@ $(function () {
     headroom.init();
   });
 $(document).ready(function() {
-// Contador  > https://codepen.io/SitePoint/pen/MwNPVq              
-// Menu
+// Radio en vivo
+var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+{
+    m4a: "http://live.rcnmundo.com/rcnradio.aac",
+    oga: "http://live.rcnmundo.com/rcnradio.aac"
+}, {
+    cssSelectorAncestor: "#cp_container_1",
+    swfPath: "../../dist/jplayer",
+    wmode: "window",
+    keyEnabled: true
+}); 
     
+// Contador  > https://codepen.io/SitePoint/pen/MwNPVq              
+// Menu    
 $('.menu > li > a').click(function(e){				
 	e.preventDefault();		//evitar el eventos del enlace normal
 	var strAncla=$(this).attr('href'); //id del ancla
 		$('body,html').stop(true,true).animate({				
 			scrollTop: $(strAncla).offset().top
 		},1000);
-
-});    
-    
-    
+});            
     
 $('#nav-icon1').click(function(){
 		$(this).toggleClass('open');
@@ -27,7 +35,8 @@ $('.block').click( 'fast', function(){
     
 // Frases  
 $("#owl-demo").owlCarousel({
-        navigation : false,
+        navigation : true,
+        navigationText : [" < "," > "],
         pagination:false,
         slideSpeed : 300,
         autoPlay: 9000, //Set AutoPlay to 3 seconds
