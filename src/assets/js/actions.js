@@ -4,11 +4,7 @@ $(function () {
     headroom.init();
   });
 $(document).ready(function() {
-// Contador  > https://codepen.io/SitePoint/pen/MwNPVq            
-    
-// Player
-    
-    
+// Contador  > https://codepen.io/SitePoint/pen/MwNPVq              
 // Menu
     
 $('.menu > li > a').click(function(e){				
