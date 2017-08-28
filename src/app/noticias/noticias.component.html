@@ -1,7 +1,7 @@
 <!-- Ultima hora  -->
 
 <div class="row">
-    <div class="large-4 columns"  *ngFor="let data of finBloque1" >            
+    <div class="large-4 columns"  *ngFor="let data of finBloque0" >            
         <div class="news">
            <a href="{{ data.urlNoti }}" target="_blank">
                 <div class="wrap_img">
@@ -21,49 +21,4 @@
             </a>
         </div>                                    
   </div>
-<div class="large-4 columns"  *ngFor="let data2 of finBloque2" >            
-    <div class="news bloque2" style="display:none">
-            <a href="{{ data2.urlNoti }}" target="_blank">
-                    <div class="wrap_img">
-                        <img class="imgw100" src="{{ data2.urlImg }}" alt="">
-                    </div>
-                    <div class="card">
-                       <div class="date">{{ data2.dateNoti | date: 'mediumDate'}}</div>
-                        <h1 class="titleN" [innerHTML] = "data2.titulo">...</h1>
-                        
-                        <div class="descript">
-                            <p [innerHTML] = 'data2.teaser' ></p>
-                        </div>
-                        <div class="logoportal">
-                            <img src="{{data2.urlLogoMarca}}" alt="">
-                        </div>
-                    </div>
-                </a>
-    </div>                                    
-</div>
-<div class="large-4 columns"  *ngFor="let data3 of finBloque3" >            
-    <div class="news bloque3" style="display:none">
-            <a href="{{ data3.urlNoti }}" target="_blank">
-                    <div class="wrap_img">
-                        <img class="imgw100" src="{{ data3.urlImg }}" alt="">
-                    </div>
-                    <div class="card">
-                        <div class="date">{{ data3.dateNoti | date: 'mediumDate'}}</div>
-                        <h1 class="titleN" [innerHTML] = "data3.titulo">...</h1>
-                       
-                        <div class="descript">
-                            <p [innerHTML] = 'data3.teaser' ></p>
-                        </div>
-                        <div class="logoportal">
-                            <img src="{{data3.urlLogoMarca}}" alt="">
-                        </div>
-                    </div>
-                </a>
-    </div>                                    
-</div>
-</div>  
-
-<div class="vermas">
-    <!-- <a href="#">VER MAS</a> -->
-    <button (click)="agregarNoticias()">Ver más</button>
 </div>

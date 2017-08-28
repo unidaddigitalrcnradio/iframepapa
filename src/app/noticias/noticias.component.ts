@@ -23,6 +23,7 @@ public arrayFM: Array<Noticia>;
 public arrayRCN: Array<Noticia>;
 public allNoti;
 public finNoti;
+public finBloque0;
 public finBloque1;
 public finBloque2;
 public finBloque3;
@@ -65,9 +66,10 @@ constructor(private _notiServ: NoticiasService){
 
                                                                 this.allNoti = this.unirArchivos(this.arrayFM , this.arrayRCN );
                                                                 this.finNoti = this.traerimagenes(this.allNoti);
-                                                                this.finBloque1 = this.add6(this.finNoti, 1);
-                                                                this.finBloque2 = this.add6(this.finNoti, 2);
-                                                                this.finBloque3 = this.add6(this.finNoti, 3);
+                                                                this.finBloque0 = this.add6(this.finNoti, 0);
+                                                                // this.finBloque1 = this.add6(this.finNoti, 1);
+                                                                // this.finBloque2 = this.add6(this.finNoti, 2);
+                                                                // this.finBloque3 = this.add6(this.finNoti, 3);
                                                             },
                                                     error => {
                                                         this.errorMessage = <any>error;
@@ -99,6 +101,11 @@ constructor(private _notiServ: NoticiasService){
     add6(_array,_bloque){
         let _array6:Noticia[] = [];
         switch (_bloque) {
+            case 0:
+                for (var i = 0; i < 3; i++) {
+                    _array6.push(_array[i]);
+                }
+                break;
             case 1:
                 for (var i = 0; i < 6; i++) {
                     _array6.push(_array[i]);
