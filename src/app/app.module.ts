@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NoticiaComponent } from './noticias/noticias.component';
 import { GaleriaComponent } from './galerias/galeria.component';
 import { RelojComponent } from './reloj/reloj.component';
+import { RedesComponent } from './redessociales/redessociales.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RelojComponent } from './reloj/reloj.component';
     AppComponent,
     NoticiaComponent,
     GaleriaComponent,
-    RelojComponent
+    RelojComponent,
+    RedesComponent
     ],
   imports: [
     BrowserModule,
