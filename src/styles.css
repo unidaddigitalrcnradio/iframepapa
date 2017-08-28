@@ -1,0 +1,100 @@
+.itemE {
+    padding: 15px;
+    padding-top: 0;
+}
+
+.certItems {
+    width: 100%;
+    max-width: 1024px;
+    display: block;
+    margin: 0px auto;
+    padding: 10px;
+    background-image: url(assets/css/bg-top1.png);
+    background-position: center;
+}
+.certSlider {
+    overflow: hidden;
+}
+.certSlider h1 {
+    text-align: left;
+    font-size: 19px;
+    color: #603813;
+    font-family: Oswald,sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    margin-bottom: 7px;
+    margin-top: 5px;
+}
+.lead {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-family: Oswald,sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #000;
+    line-height: 1.2;
+}
+.certItems .title {
+    text-align: left;
+    font-size: 22px;
+    color: #603813;
+    font-family: Oswald,sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 13px;
+}
+.wrap_img {
+    position: relative;
+    height: 135px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #fefefe;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 19px;
+    top: 4px;
+    z-index: 1;
+}
+.title h1 {    
+    font-size: 26px;
+    color: #603813;
+    font-family: Oswald,sans-serif;
+    font-weight: 500;
+    line-height: 1.199999;
+    margin-bottom: 9px;
+    text-align: center;
+    padding-bottom: 5px;
+    background-image: url(assets/css/bg_title_sec.png);
+    background-position: center 35px;
+    background-repeat: no-repeat;
+    padding-bottom: 33px;
+
+}
+.verespecial a {
+    text-align: center;
+    color: #c4a46d;
+    padding: 5px;
+    display: block;
+    margin: 0px auto;
+    width: 175px;
+    border-radius: 3px;
+    font-family: Oswald,sans-serif;
+    font-weight: 400;
+    font-size: 21px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    background: white;
+    border: 1px solid;
+}
+
