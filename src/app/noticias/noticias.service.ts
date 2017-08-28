@@ -35,21 +35,22 @@ export class NoticiasService {
 			var imgjson = _json[i].imgjson;
 			var contenido = _json[i].content.rendered;
 			if (teaser === ''){
-				let contRemp:string = contenido.trim();
-				contRemp = this.arreglarStrings('<p style="text-align: justify;">',' ', contRemp).trim();
-				contRemp = this.arreglarStrings('<p><!--more--></p>',' ', contRemp);
-				contRemp = this.arreglarStrings('<p><!--more--></p>',' ', contRemp);
-				contRemp = this.arreglarStrings('<p>',' ', contRemp);
-				contRemp = this.arreglarStrings('</p>',' ', contRemp);
-				contRemp = this.arreglarStrings('<strong>',' ', contRemp);
-				contRemp = this.arreglarStrings('</strong>',' ', contRemp);
-				teaser = contRemp.substring(0,87);
+				let contRemp:string = contenido;
+				contRemp = this.arreglarStrings('<p style="text-align: justify;">','', contRemp).trim();
+				contRemp = this.arreglarStrings('<!--more-->','', contRemp);
+				contRemp = this.arreglarStrings('<p>','', contRemp);
+				contRemp = this.arreglarStrings('</p>','', contRemp);
+				contRemp = this.arreglarStrings('<strong>','', contRemp);
+				contRemp = this.arreglarStrings('</strong>','', contRemp);
+				contRemp = this.arreglarStrings('<br />','',contRemp);
+				contRemp = contRemp.trim();
+				teaser = contRemp.substring(0,73);
 			}else{
 				teaser = teaser.trim();
-				teaser = this.arreglarStrings('<p>',' ', teaser);
-				teaser = this.arreglarStrings('</p>',' ', teaser);
-				teaser = this.arreglarStrings('<strong>',' ', teaser);
-				teaser = this.arreglarStrings('</strong>',' ', teaser);
+				teaser = this.arreglarStrings('<p>','', teaser);
+				teaser = this.arreglarStrings('</p>','', teaser);
+				teaser = this.arreglarStrings('<strong>','', teaser);
+				teaser = this.arreglarStrings('</strong>','', teaser);
 			}
 			//console.log(teaser);
 			teaser = this.arreglarStrings('<p>','',teaser);
@@ -128,6 +129,7 @@ export class NoticiasService {
 	}
 
 	arreglarStrings(_dato, _remplazo, _string:string){
-		return _string.replace(_dato,_remplazo);
+		let StringArreglado = _string.replace(_dato,_remplazo);
+		return StringArreglado;
 	}
 }
