@@ -1,20 +1,26 @@
 	// tslint:disable-next-line:indent
-import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
-import { Headers, RequestOptions } from '@angular/http';
+import {Injectable,Inject} from '@angular/core';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import {Cors} from 'cors';
+import { DOCUMENT } from '@angular/platform-browser';
 
 import {Noticia} from './noticias';
 
 @Injectable()
 export class NoticiasService {
 	// tslint:disable-next-line:indent
-	constructor(private _http: Http) { }
+	constructor(private _http: Http, @Inject(DOCUMENT) private document: any) { }
 
 	getJson(_url){
-		// petición por get a esa url de un api rest de pruebas
+		const headers = new Headers();
+		headers.append('Origin', this.document.location.href);
+        headers.append('Access-Control-Allow-Headers', 'Content-Type');
+        headers.append('Access-Control-Allow-Methods', 'GET');
+		headers.append('Access-Control-Allow-Origin', '*');
+
 		let ObjJson = this._http.get(_url).map(res => res.json());
 		return ObjJson;
 	}
