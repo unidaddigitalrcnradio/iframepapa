@@ -1,24 +1,27 @@
 <!-- Ultima hora  -->
 
-<div class="row">
-    <div class="large-4 columns"  *ngFor="let data of finBloque0" >            
-        <div class="news">
-           <a href="{{ data.urlNoti }}" target="_blank">
-                <div class="wrap_img">
-                    <img class="imgw100" src="{{ data.urlImg }}" alt="">
-                </div>
-                <div class="card">
-                     <div class="date">{{ data.dateNoti | date: 'mediumDate'}}</div>
-                    <h1 class="titleN" [innerHTML] = "data.titulo">...</h1>
-                  
-                    <div class="descript">
-                        <p [innerHTML] = 'data.teaser' ></p>
-                    </div>
-                    <div class="logoportal">
-                        <img src="{{data.urlLogoMarca}}" alt="">
-                    </div>
-                </div>
-            </a>
-        </div>                                    
-  </div>
-</div>
+ <div class=certItems>
+        
+         <div class="title">
+             <h1>Francisco el papa en colombia</h1>
+         </div>
+    <swiper [config]="config">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let data of finBloque0" >                       
+                        <div class="itemE">                                      
+                            <a href="{{data.urlNoti}}" target="_blank">
+                            <div class="logo">
+                                <img src="{{data.urlLogoMarca}}" alt="">
+                            </div>
+                            <div class="wrap_img">
+                                <img src="{{ data.urlImg }}" alt="">
+                            </div>
+                                <h1 class="titulo" [innerHTML] = "data.titulo"></h1>
+                        
+                            </a> 
+                        </div>                           
+                    </div> 
+        </div>
+    </swiper>
+    <div class="verespecial"> <a href="#"> Ver especial</a> </div>
+ </div>

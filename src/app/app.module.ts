@@ -4,6 +4,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NoticiaComponent } from './noticias/noticias.component';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NoticiaComponent } from './noticias/noticias.component';
     ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

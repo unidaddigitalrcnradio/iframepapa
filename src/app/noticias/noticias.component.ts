@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 // Importamos la clase del servicio
 import {NoticiasService} from '../noticias/noticias.service';
 import {ArrayNoticias} from '../noticias/arraynoticia';
 import {Noticia} from '../noticias/noticias';
+
+import * as jQuery from 'jquery';
+import { DatePipe } from '@angular/common';
+import { SwiperModule } from 'angular2-useful-swiper';
+
 
 // Declaramos las variables para jQuery
 declare var jQuery:any;
@@ -15,7 +20,7 @@ declare var $:any;
   providers:[NoticiasService]
 })
 
-export class NoticiaComponent{
+export class NoticiaComponent {
 public jsonFm;
 public jsonRcn;
 public errorMessage;
@@ -28,6 +33,27 @@ public finBloque1;
 public finBloque2;
 public finBloque3;
 public contNoticia = 'bloque2';
+
+@ViewChild('selectElem') el:ElementRef;
+
+config: SwiperOptions = {
+    slidesPerView: 3,
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop:true,
+    autoplay: 4000,
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        }, 
+        520: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        },
+    }
+}
+
 
 constructor(private _notiServ: NoticiasService){
     this._notiServ.getJson('http://www.lafm.com.co/wp-json/wp/v2/posts?categories=12556')
@@ -66,7 +92,7 @@ constructor(private _notiServ: NoticiasService){
 
                                                                 this.allNoti = this.unirArchivos(this.arrayFM , this.arrayRCN );
                                                                 this.finNoti = this.traerimagenes(this.allNoti);
-                                                                this.finBloque0 = this.add6(this.finNoti, 0);
+                                                                this.finBloque0 = this.add6(this.finNoti, 1);
                                                                 // this.finBloque1 = this.add6(this.finNoti, 1);
                                                                 // this.finBloque2 = this.add6(this.finNoti, 2);
                                                                 // this.finBloque3 = this.add6(this.finNoti, 3);
