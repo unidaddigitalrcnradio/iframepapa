@@ -98,3 +98,29 @@
     border: 1px solid;
 }
 
+
+@media only screen and (max-width: 768px) {
+    
+.title h1 {
+    font-size: 24px;
+    color: #603813;
+    font-family: Oswald,sans-serif;
+    font-weight: 500;
+    line-height: 1.199999;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: 7px;    
+    background:none;
+    background-repeat: no-repeat;
+    padding-bottom: 3px;
+}  
+    
+  h1.titulo {
+    font-size: 20px !important;
+    padding-bottom: 20px !important;
+}
+    
+}
+
+
+
