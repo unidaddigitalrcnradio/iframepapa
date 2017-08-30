@@ -15,12 +15,16 @@ export class NoticiasService {
 	constructor(private _http: Http, @Inject(DOCUMENT) private document: any) { }
 
 	getJson(_url){
-		const headers = new Headers();
-		headers.append('Origin', this.document.location.href);
-        headers.append('Access-Control-Allow-Headers', 'Content-Type');
-        headers.append('Access-Control-Allow-Methods', 'GET');
-		headers.append('Access-Control-Allow-Origin', '*');
+		// const headers = new Headers();
 
+		// headers.append('Origin', this.document.location.href);
+        // headers.append('Access-Control-Allow-Headers', 'X-PINGOTHER');
+        // headers.append('Access-Control-Allow-Methods', 'GET');
+		// headers.append('Access-Control-Allow-Origin', '*');
+		// headers.append('Host', 'www.lafm.com')
+		// //console.log(headers);
+		// let options = new RequestOptions({headers, method: 'get' });
+		//console.log(options);
 		let ObjJson = this._http.get(_url).map(res => res.json());
 		return ObjJson;
 	}
