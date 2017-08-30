@@ -130,7 +130,7 @@ export class NoticiasService {
 						errorMessage = <any>error;
 						if (errorMessage !== null){
 							allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/prev.jpg';
-							console.log(errorMessage);
+							//console.log(errorMessage);
 						}
 					});
 			}
