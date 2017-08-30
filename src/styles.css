@@ -82,7 +82,7 @@
 
 }
 .verespecial a {
-    text-align: center;
+text-align: center;
     color: #c4a46d;
     padding: 5px;
     display: block;
@@ -93,10 +93,23 @@
     font-weight: 400;
     font-size: 21px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     background: white;
     border: 1px solid;
+    margin-top: 12px;
 }
+.log_papa {
+    width: 185px;
+    height: 80px;
+    display: block;
+    margin: 0px auto;
+    background-image: url(assets/css/logo_pv_i.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 4px;
+    margin-top: 7px;
+}
+
 
 
 @media only screen and (max-width: 768px) {
