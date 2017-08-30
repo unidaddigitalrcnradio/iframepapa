@@ -6,17 +6,28 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import {Cors} from 'cors';
 import { DOCUMENT } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import {Noticia} from './noticias';
 
 @Injectable()
-export class NoticiasService {
+export class NoticiasNewService {
 	// tslint:disable-next-line:indent
 	constructor(private _http: Http, @Inject(DOCUMENT) private document: any) { }
 
 	getJson(_url){
-		let ObjJson = this._http.get(_url).map(res => res.json());
-		return ObjJson;
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", _url, true ); // false for synchronous request
+
+		 xmlHttp.setRequestHeader("Content-Type","application/json");
+		// xmlHttp.setRequestHeader("X-Requested-With","XMLHttpRequest");
+		// //supported in new browsers...do JSONP based stuff in older browsers...figure out how
+		// xmlHttp.setRequestHeader("Access-Control-Allow-Origin","http://lafm.com.co/");
+		 //xmlHttp.setRequestHeader('Access-Control-Allow-Headers', 'Origin,Content-Type,Accept')
+		//xmlHttp.setRequestHeader("Accept","application/json");
+		xmlHttp.send();
+
+		return JSON.parse(xmlHttp.responseText);
 	}
 
 	crearObjNoti(_json){
@@ -110,19 +121,9 @@ export class NoticiasService {
 			if (valor === 'sinImagen'){
 				allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/prev.jpg';
 			}else{
-				this.getJson(valor).subscribe(
-					result => {
-						imgDatos = result;
-						allnoti[i].urlImg = imgDatos.source_url;
-					
-					},
-					error => {
-						errorMessage = <any>error;
-						if (errorMessage !== null){
-							allnoti[i].urlImg = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/prev.jpg';
-							//console.log(errorMessage);
-						}
-					});
+				imgDatos = this.getJson(valor);
+				allnoti[i].urlImg = imgDatos.source_url;
+
 			}
 		}
 	return allnoti;

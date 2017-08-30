@@ -60,6 +60,7 @@ constructor(private _notiServ: NoticiasService){
                                     .subscribe(
                                         result => {
                                                 this.jsonFm = result;
+                                                console.log(result);
                                                 //Recorrer el arreglo
                                                 for (let _p of this.jsonFm){
                                                     _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/lafm.png';
@@ -93,8 +94,9 @@ constructor(private _notiServ: NoticiasService){
                                                                 this.allNoti = this.unirArchivos(this.arrayFM , this.arrayRCN );
                                                                 this.finNoti = this.traerimagenes(this.allNoti);
                                                                 this.finBloque0 = this.add6(this.finNoti, 1);
-                                                                // this.finBloque1 = this.add6(this.finNoti, 1);
-                                                                // this.finBloque2 = this.add6(this.finNoti, 2);
+                                                                //  this.finBloque1 = this._notiServ.getJsonJS('http://www.lafm.com.co/wp-json/wp/v2/posts?categories=12556');
+                                                                // console.log(this.finBloque1);
+                                                                 // this.finBloque2 = this.add6(this.finNoti, 2);
                                                                 // this.finBloque3 = this.add6(this.finNoti, 3);
                                                             },
                                                     error => {

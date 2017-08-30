@@ -4,13 +4,15 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NoticiaComponent } from './noticias/noticias.component';
+import { NoticiaNewComponent } from './noticiasnew/noticiasnew.component';
 import { SwiperModule } from 'angular2-useful-swiper';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoticiaComponent
+    NoticiaComponent,
+    NoticiaNewComponent
     ],
   imports: [
     BrowserModule,
