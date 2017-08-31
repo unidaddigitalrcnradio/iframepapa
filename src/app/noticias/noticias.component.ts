@@ -102,8 +102,8 @@ constructor(private _notiServ: NoticiasService){
                                                     error => {
                                                         this.errorMessage = <any>error;
                                                         if (this.errorMessage !== null){
-                                                            //console.log(this.errorMessage);
-                                                            alert('Error en la petición');
+                                                            console.log(this.errorMessage);
+                                                           // alert('Error en la petición');
                                                         }
                                                     }
                                                 );
@@ -111,8 +111,8 @@ constructor(private _notiServ: NoticiasService){
                                         error => {
                                             this.errorMessage = <any>error;
                                             if (this.errorMessage !== null){
-                                                //console.log(this.errorMessage);
-                                                alert('Error en la petición');
+                                                console.log(this.errorMessage);
+                                                //alert('Error en la petición');
                                             }
                                         }
                                     );
