@@ -1,6 +1,6 @@
 {
-    "*/*":{
-        "target":"localhost:4200",
+    "http://www.lafm.com.co/*":{
+        "target":"http://especiales.rcn.com.co/elpapaencolombia/",
         "secure":false,
         "logLevel": "debug"
     }
