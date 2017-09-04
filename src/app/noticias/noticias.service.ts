@@ -27,6 +27,10 @@ export class NoticiasService {
 		
 			var id = _json[i].id;
 			var titulo:string = _json[i].title.rendered;
+			titulo = this.arreglarStrings('&#8216;','"', titulo);
+			titulo = this.arreglarStrings('&#8217;','"', titulo);
+			titulo = titulo.substr(0,71);
+			
 			var teaser: string = _json[i].excerpt.rendered;
 
 			var fecha:Date = _json[i].date;
@@ -114,7 +118,7 @@ export class NoticiasService {
 					result => {
 						imgDatos = result;
 						allnoti[i].urlImg = imgDatos.source_url;
-					
+						console.log(allnoti[i]);
 					},
 					error => {
 						errorMessage = <any>error;

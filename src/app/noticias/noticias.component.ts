@@ -60,7 +60,6 @@ constructor(private _notiServ: NoticiasService){
                                     .subscribe(
                                         result => {
                                                 this.jsonFm = result;
-                                                console.log(result);
                                                 //Recorrer el arreglo
                                                 for (let _p of this.jsonFm){
                                                     _p.logomarca = 'http://image.rcn.com.co.s3.amazonaws.com/rcnradio/lafm.png';
